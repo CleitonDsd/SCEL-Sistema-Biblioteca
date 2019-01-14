@@ -1,0 +1,161 @@
+/* Páginas Padrão *//* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter)*/
+/*Algumas funções serão comentadas, pois ainda não consigo manipular todas'*/
+
+/*<>Folha Padrão de CSS Para os Sobre/About do Site<>'*/
+/*<>Standard CSS Sheet for the About of WebSite<>'*/
+
+}
+.margem{ /*Dimensões da margem do site'*/
+max-width: 1280px;
+max-width: 1280px;
+width:80%;
+padding:5px;
+margin: auto;  
+}
+/*------------- SOBRE DEV ------------'*/
+.Banner1{	
+	position: relative;
+	margin: auto;
+	top: 50px;
+	border-radius: 5px;
+	text-align: center;
+}
+.Banner3 p{
+	position: relative;
+	top: 100px;
+	text-align: justify;
+	color: gold;
+	font-weight: bold;
+	font-family: Verdana;
+	font-family: times new roman;
+	font-size: 21px;
+	width: 250px;
+	margin: auto;
+	padding-bottom: 70px;
+}
+.Banner2 h1{
+	position: relative;
+	margin: auto;
+	padding-bottom: 50px;
+	color: gold;
+	font-family: Verdana;
+}
+.Banner2{
+	position: relative;
+	margin: auto;
+	top: 300px;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.Banner2 img{
+	border-radius: 10px;
+}
+.Banner3{
+	position: relative;
+	margin: auto;
+	top: 500px;
+	border-radius: 5px;
+	text-align: center;
+}
+.Banner3 img{
+	position: relative;
+	margin: auto;
+	width: 700px;
+	border-radius: 15px;
+}
+.Banner3 h2{
+	position: relative;	
+	color: gold;
+	font-family: Verdana;
+}
+.Banner1 h1{
+	position: relative;
+	top: 60px;
+	color: gold;
+	font-family: Verdana;
+}
+
+/*#rodapeAbout{
+	position: relative;
+	top: 400px;
+}*/
+
+/*Reponsividade*/
+@media screen and (max-width:480px ){
+	.Banner1 img{
+		width: 100%;
+		width:  330px;
+		height: 300px;
+	}
+	.Banner2 img{
+		width: 89%;
+	}
+	.Banner3 img{
+		width: 100%;
+	}	
+}
+
+
+/*
+#banner2 {
+
+	position: relative;
+	top: 190px;
+	left: 253px;
+	margin: auto;
+	padding-top: 40px;
+	border-radius: 15px;
+}
+.txtBanner1{
+	margin: auto;
+	background-color: #333333;
+	width: 400px;
+	height: 200px;
+	position: relative;
+	top: 70px;
+	border-radius: 5px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: #B8860B;
+}
+.txtBanner1 p{
+	padding-top: 20px;
+	margin-left: 10px;
+	margin-right:10px;
+	text-align: justify;
+	color: #F0FFFF;
+	font-family: times new roman;
+	font-size: 21px;	
+
+}
+
+.custoB{
+	position: relative;
+	margin: auto;
+	top: 280px;
+	left: 200px;
+	color: gold;
+	font-family: Verdana;
+}
+#banner3{
+	position: relative;
+	margin: auto;
+	width: 600px;
+	border-radius: 15px;
+	top: 300px;
+	left: 230px;
+}
+.tel{
+	position: relative;
+	margin: auto;
+	top: 380px;
+	padding-bottom:400px;
+}
+.tel p{
+	text-align: center;
+	color: gold;
+	font-family: Verdana;
+	font-size: 25px;
+}
+*//* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleiton_Dsd (twitter)*/

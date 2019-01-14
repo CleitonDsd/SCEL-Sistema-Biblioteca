@@ -1,0 +1,568 @@
+/* Páginas Padrão *//* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter)*/
+/*Algumas funções serão comentadas, pois ainda não consigo manipular todas'*/
+
+/*<>Folha Padrão de CSS Para as Páginas do Site<>'*/
+/*<>Standard CSS Sheet for the WebSite<>'*/
+
+*{	
+	margin-top: 0;
+	font-family: helvetica;
+}
+.margem{ /*Dimensões da margem do site'*/
+max-width: 1280px; /*tamanho máximo que irá atingir'*/
+width:80%;
+padding:5px; /*Espaçamento dos 4 lados'*/
+margin: auto;  
+}
+/*-----------------------------------------TOPO DO SITE-------------------------------------------------*/		
+/* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter)'*/
+
+.topo{ /*Topo do site, onde está localizado o menu, titulo...'*/
+background-color: #F5F5DC;
+padding: 5px; /*Espaçamento dos 4 lados'*/
+width: /*1024/1300px -> responsivo'*/ 80.96923076923077%;
+height: 150px;	
+position: relative;
+margin: auto;
+border-width: 2px;
+border-style: solid;
+border-color: black ;
+border-radius: 2px; /*arrendonda a borda'*/
+}
+/*---------------------menu--------------------*/
+.menuu{	/*Div, onde contem os menu {ul, li}...'*/		
+position: relative;
+height: 40px;
+top: -5px;
+padding-top: 1px; /*define espaçamento superior*'/
+margin-top: -5px; /*margem superior*/
+text-align: center; 
+border-radius: 4px;
+
+}
+.menuu,
+.sub-menu {
+	list-style: none;
+	/*background:  #166478;*/ /*cor do menu'*/
+	background:#333333;
+	color: #bbbbbb; /*cor da fonte'*/
+}
+.sub-menu {	/*cor do fundo do sub-menu*/
+	/*<>sub-menu, só ira aparecer quando o mouse for passado por cima do de algumas li do menu<>'*/
+	background: #F8F8FF;	
+	padding: 1px;
+	border-radius: 2px;
+	border-style: solid;
+	border-color: beige;
+
+}
+.menu a {	
+	/*<>links do menu<>'*/
+	text-decoration: none; /*remove o underscore que se forma em links'*/
+	display: block; /*elemento em bloco - lado do outro'*/
+	padding: 15px 10px; /*Espaçamento' */
+	line-height: 5px; /*controla os espaçamentos entre as linhas de um texto'*/
+	color: #bbbbbb; /*cor da fonte'*/
+	font-family: sans-serif;
+	font-size: 12px;
+	text-transform: uppercase; /*deixa todos caracteres maiúsculos'*/
+	font-weight: 700; /*especifica intensidade da fonte'*/
+}
+.menu li {
+	/*<>LI's do Menu (Home, Sair...)<>'*/
+	list-style-type:none; /*define estilo de listas'*/
+}
+.menu > li {
+	margin: auto; 
+	display: inline-block;	
+}
+.menu > li:hover { /*cor ao passar mouse sobre menu*/
+	background:  #E8E8E8;	
+}
+.menu li a:hover{
+	color:black;
+	font-family: helvetica;	
+}
+.menu li:hover > .sub-menu {
+	display: block; /*elemento em bloco - um abaixo do outro*/
+}
+.sub-menu a{
+	color: black;
+}
+.sub-menu {	
+	text-align: left;
+	display: none;
+	position: absolute;
+	min-width: 50px;	
+	color: black;
+}
+.sub-menu li:hover {
+	background-color: #bbbbbb;
+	text-decoration: underline; 
+
+}
+.sub-menu .sub-menu {	
+	top: 0;
+	/*left:100%;*/
+}
+
+#logoEtecForm{
+	/*<>Logo Principal<>'*/
+	float: left;
+	width: 100%;
+	max-width: 150px;
+	height: 100px;
+	position: relative;
+	margin: auto;
+	margin-left: /*40px -> responsivo*/ 3.91625%;
+	padding-top: /*10px -> responsivo*/ 0.9765625%;
+	background-size: 100% auto; /*100% width Cima e Baixo */
+}
+#fotoUsuario {
+	/*<>Foto de quem estará utilizando o sistema<>';*/
+	position: relative;
+	float: right;
+	margin-right: /*20px -> responsivo*/1.953125%;
+	width: 100%;
+	max-width: 110px;
+	top:1px;
+	background-color: #B5B5B5;
+	border-color: gray;
+	border-style: groove;
+}
+.tituloPrincipal{
+	/*<>"Biblioteca" ao lado do logo Etec<>'*/'
+	width: /*100/1024 -> responsivo*/ 9.765625%;
+	position: relative;
+	margin: auto;
+	top: /*58px/1024 -> responsivo*/35.879841112214499%;
+	float: left;
+}
+.tituloPrincipal h1{
+	float: left;
+	text-decoration: none;
+	color: #4F4F4F ;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 2em;
+}
+
+/*-----------------------------------------DIV MARGEM-------------------------------------------------------*/		
+/* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter)*/
+
+.data{ 
+	/*<>Data e hora ao centro do site em Js<>'*/
+	background-color: #8B1A1A;
+	margin:auto;	
+	height: 25px;
+	line-height: 25px;
+	width: 100%;
+	max-width: 500px;
+	font-weight: 100;
+	top: -74px;
+	border-style: none solid solid solid;
+	border-color: black;
+	border-radius: 0px 0px 15px 15px;
+	box-shadow: 1px 1px 1px #888888;	/*define sombra da div*/
+	color: #F0FFFF;
+	font-family: helvetica;	
+	text-align: center;
+}
+/*.verde{ cor da data e hora centrais
+	background-color: #166478;
+}*/
+
+/* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter)*/
+
+/*>>>>>>>>>>>>>> RODAPÉ <<<<<<<<<<<<<<<<<*/
+
+.rodape{
+	/*rodapé do site, parte inferior do site, onde contém as redes sociais<>'*/
+	position: relative;
+	top: 175px;
+	border-radius: 7px;
+	border-color: #c6c6c6;
+	border-style: solid;
+	text-align: justify;
+	width: 100%;
+	max-width: 800px;
+	height: 183px;
+	margin: auto;
+	background-color: #333;
+	color: #ccc
+}
+.rodape p{
+	font-size: .9em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.rodape span{
+	font-size: .8em;
+	text-align: center;
+}
+.social li{
+	display:inline; /*ocupa só a largura do conteudo do bloco*/
+	margin: 1px;
+}
+
+.social li a{
+	padding: 10px
+}
+.social img{
+	width: 30px;
+	border-radius: 10px;
+}
+.hr hr{
+	position: relative;
+	top: 120px;
+}
+/* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleiton_Dsd (twitter)*/
+/*----------------------------Formulários de Cadastros----------------------------*/
+.posicaoForm{
+	/*<>div que controla a posição do formulário e seus itens<>'*/
+	position: relative;
+	margin: auto;
+	background-color: #bbbbbb;
+	border-radius: 5px;
+	border-style: groove;
+	border-color: black;
+	box-shadow: 1px 1px 1px #888888;
+	width: 600px;
+	height: 590px;
+	top: 50px;
+}
+/*---- Form de Cadastro ----*/
+#formEmprestimos{
+	/*<>aumentando comprimento da div para form de emprestimos<>'*/
+	height: 740px;
+}
+#formLivros{
+	/*<>aumentando comprimento da div para form de livros<>'*/
+	height: 600px;
+}
+#formUsuario{
+	height: 640px;
+}
+/*Form de Consulta*/
+#formConsulta{
+	height: 650px;
+}
+#formEmprestimo{
+	height: 730px;
+}
+/*<> ---------- borda inferior do formulário<>' ------------*/
+/*---- Form de Cadastro ----*/
+.fieldForm{
+	border-radius: 5px;
+	position: relative;
+	margin-left: 35px;
+	top: 10px;
+	width: 500px;
+	height: 530px;
+
+}
+#fieldEmprestimos{
+	/*<>borda inferior empréstimos<>'*/
+	height: 685px;
+}
+#fieldLivros{
+	/*<>borda inferior livros<>'*/
+	height: 545px;
+}
+#fieldUsuario{
+	/*<>borda inferior ivros<>'*/
+	height: 585px;
+}
+/*---- Form de Consulta ----*/
+#fieldConsultaAluno{
+	height: 600px;
+}
+#fieldUsuario{
+	height: 600px;
+}
+.posicaoForm legend{
+	/*<>titulo do formulário<>'*/
+	color: black;
+	font-weight: bold;
+	font-family: helvetica;
+}
+.posicaoForm h3{
+	margin-top: -4px;
+	text-align: center;
+	width: 200px;
+	background-color: #8B1A1A;
+	color: 	#F0FFFF;
+	font-size: 16px;
+	font-family: helvetica;	
+	position: relative;
+	margin: auto;
+	border-radius: 6px;
+	box-shadow: 1px 1px 1px;
+}
+#formConsulta h3, #formEmprestimo h3{
+	/*muda a cor do titulo principal do form de Consulta*/
+	background-color:  #166478;
+}
+
+.posicaoForm h3:hover{
+	color: darkgray;
+	-moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+	/*"transfom" permite dar zoom nos elementos; */
+	/*"webkit" define que só os browsers que possuem essa estrutura que vão conseguir ler; */
+}
+.formulario{
+	/*<>formulário - nomes dos campos - e caixa de textos<>'*/
+	font-family: helvetica;	
+	text-align: left;
+	font-weight: 500px;	
+	color: #1C1C1C;
+	font-size: 16px;
+}
+.formulario input[type=text], [type=email], select, textarea{
+	/*<>campos de resposta do form<>'*/
+	position: relative;
+	margin-bottom: -2px; /*espaçamento inferior*/
+	left: 70px;
+	top: -38px; 
+	border-radius: 5px;
+	height: 20px;	
+
+}
+.formulario textarea{
+	/*<>campos de observação<>'*/
+	height: 130px;
+	width: 275px;
+}
+.formulario input {
+	position: relative;
+	margin-bottom: -2px; /*espaçamento inferior*/
+	left: 70px;
+	top: -38px;
+	border-radius: 5px;
+	height: 20px;		
+	
+}
+.formulario select, input[type=file], input[type=text], input[type=number], textarea, input[type=email]{
+	background-color: #F0F8FF;
+}
+.formulario select{
+	/*<>caixas de opções do form<>'*/
+	margin-bottom: -2px;
+	text-align: center;
+	height: 25px;
+	width: 100px;
+	font-family: helvetica;
+	
+}
+.itensForm{
+	/*<>div que controla os itens dentro do form<>'*/
+	position: relative;
+	top: 30px;
+}
+
+.fotoCadastro { 
+	/*foto do formulario de cadastro*/
+	position: relative;
+	top: -20px;
+	width: 150
+}
+.fotoCadastro img{
+	background-color: #c6c6c6;
+	float: right;
+	position: relative;
+	margin: auto;
+	width: 110px;
+	height: 140px;
+	border-style: solid;
+	border-color: black;
+	border-radius: 10px;
+	border-width: 1px;
+
+}
+.fotoCadastro input[type=file]{	
+	/*<>botao para selecionar foto de cadastro<>'*/
+	width: 110px;
+	text-align: center;
+	border-radius: 6px;
+	position: relative;
+	float: right;
+	left: 110px;
+	top: 135px;
+} 
+.fotoCadastro input[type=file]:hover{
+	background-color: #E6E6FA;	
+	color: #166478;
+	font-family: helvetica;	
+	text-align: center;	
+	position: relative;
+	border: 1px;
+	border-style: solid;
+	border-color: black;
+	-moz-transform: scale(1.1); 
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+	/*"transfom" permite dar zoom nos elementos; */
+	/*"webkit" define que só os browsers que possuem essa estrutura que vão conseguir ler; */
+}
+	
+/*---------- Botoes do form -----------*/
+.botoes input, button{	
+	top: 35px;
+	left: 85px;
+	position: relative;
+	text-decoration: none;
+	border-style: groove;
+	font-weight: bold;
+}
+.botoes input, button{
+	width: 100px;
+	height: 30px;
+	border-radius: 6px;
+}
+.botoes a, input{
+	text-decoration: none;
+	color: black;	
+}
+.botoes input:hover{
+	font-weight: bold;	
+	color: black;
+	font-family: helvetica;	
+	text-align: center;
+	font-weight: bold;
+	position: relative;
+	border: 1px;
+	border-style: solid;
+	border-color: black;
+	/*"transfom" permite dar zoom nos elementos; */
+	/*"webkit" define que só os browsers que possuem essa estrutura que vão conseguir ler; */
+	-moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+	/*"transfom" permite dar zoom nos elementos; */
+	/*"webkit" define que só os browsers que possuem essa estrutura que vão conseguir ler; */
+	border-radius: 6px;
+}
+.botoes input[type=reset]:hover{
+	background-color: #F0E68C;	
+}
+.botoes input[type=submit]:hover{
+	background-color: #C0FF3E ;
+}
+.botoes button:hover{
+	/*Para o botao de voltar*/
+	background-color: #FF6347;	
+}
+.botoes button:hover{
+	/*Para o botao de voltar*/
+	font-weight: bold;	
+	font-family: helvetica;	
+	text-align: center;
+	font-weight: bold;
+	position: relative;
+	border: 1px;
+	border-style: solid;
+	border-color: black;
+	-moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	/*"transfom" permite dar zoom nos elementos; */
+	/*"webkit" define que só os browsers que possuem essa estrutura que vão conseguir ler; */
+	transform: scale(1.1);
+	border-radius: 6px;
+}
+#botoesEmprestimos input, #botoesEmprestimos button {
+	/*<>botoes do form de emprestimos<>'*/
+	top: 15px;
+}
+#botoesLivro input, #botoesLivro button{
+	top: 15px;
+}
+#botoesUsuario input, #botoesUsuario button{
+	top: 15px;
+}
+
+/*------------ BOTÕES DE CONSULTA ----------*/
+#botoesConsulta, #botoesConsultaEmp {
+	position: relative;
+	right: 40px;
+}
+#botoesConsultaEmp{
+	top: -30px;
+}
+/*------------ */
+.verde{ /*cor da data e hora centrais*/
+	background-color: #166478;
+}
+
+/*----------------------- CAIXA DE PESQUISA -----------------'*/
+/*Do formulários/páginas de Consulta*/
+
+/
+/*>>>>>>>>>>>> Caixa de pesquisa <<<<<<<<<<<<<*/
+/* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter)*/
+.pesquisa a {
+	color: #69C;
+	text-decoration: none;
+}
+.pesquisa a:hover {
+	color: #F60;
+}
+.pesquisa h1 {
+	font: 1.7em;
+	line-height: 110%;
+	color: #000;
+}
+.pesquisa p {
+	margin: 0 0 20px;
+}
+
+
+.pesquisa input {
+	outline: none;
+}
+.pesquisa input[type=search] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 100%;
+}
+.pesquisa input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+	display: none; 
+}
+
+
+.pesquisa input[type=search] {
+	background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+	border: solid 1px #ccc;
+	padding: 9px 10px 9px 32px;
+	width: 85px;
+	
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+	
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+.pesquisa input[type=search]{
+	background-color: #F0F8FF;
+}
+.pesquisa input[type=search]:focus {
+	width: 180px;
+	border-color: #66CC75;
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+
+.pesquisa input:-moz-placeholder {
+	color: #999;
+}
+.pesquisa input::-webkit-input-placeholder {
+	color: #999;
+}

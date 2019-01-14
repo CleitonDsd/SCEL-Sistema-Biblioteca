@@ -1,0 +1,248 @@
+/* Páginas Padrão *//* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter)*/
+*{	
+	margin-top: 0;
+	font-family: helvetica;
+}
+.margem{ /*Dimensões da margem do site'*/
+max-width: 1280px;
+max-width: 1280px;
+width:80%;
+padding:5px;
+margin: auto;  
+}
+.topo{ /*Topo do site, onde está localizado o menu, titulo...'*/
+background-color: #F5F5DC;
+padding: 5px;
+width: 1330px;
+height: 80px;	
+position: relative;
+margin: auto;
+border-width: 2px;
+border-radius: 15px;
+border-style: solid;
+border-color: black ;
+}
+.logoEtec img{ /*Imagem ao lado esquerdo do titulo principal do site'*/
+position: relative;
+margin: auto;
+width: 75px;
+border-style: solid;
+border-color: darkblue;
+border-radius: 10px;
+border-width: 1px;
+top: 2px;
+}
+.tituloPrincipal a{
+	text-decoration: none;
+	position: relative;
+	margin: auto;
+	font-family: sans-serif;
+	font-weight: bold;
+	color: gray;
+	top: -60px;
+	left: 100px;
+}
+.menuu{	/*Div, onde contem os menu {ul, li}...'*/		
+position: relative;
+float: right;
+right: 100px;
+top: -113px;
+border-radius: 10px 10px; 
+padding-right: 25px;
+}
+/* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter)*/
+
+/*>>>>>>>>>>>> menu  do topo do site <<<<<<<<<<<<<<<*/
+
+.menuu,
+.sub-menu {
+	list-style: none;
+	background: #F5F5F5; /*cor do menu*/
+}
+.sub-menu {	/*cor do fundo do sub-menu*/
+	background: #E0EEEE;	
+}
+.menu a {	
+	text-decoration: none;
+	display: block;
+	padding: 10px 10px;
+	color: gray; /*cor da fonte*/
+	font-family: sans-serif;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+.menu li {
+	list-style-type:none;
+}
+.menu > li {
+	float: left;
+}
+.menu > li:hover { /*cor ao passar mouse sobre menu*/
+	background:  #166478;
+	border-radius: 6px;
+}
+.menu li a:hover{
+	color:antiquewhite;
+	font-family: helvetica;	
+	text-align: center;
+}
+.menu li:hover > .sub-menu {
+	display: block;
+}
+.sub-menu {	
+	text-align: left;
+	display: none;
+	position: absolute;
+	min-width: 50px;	
+}
+.sub-menu li:hover {
+	background:#166478;	
+	border-radius: 6px;
+}
+.sub-menu .sub-menu {	
+	top: 0;
+	left:100%;
+}
+/* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter)*/
+.fotoUsuario { /*foto do usuário*/
+	margin: auto;
+	position: relative;
+	top: -143px;
+	float: right;
+	left: 485px;
+	font-size: 13px;
+	font-family: inherit;
+}
+.fotoUsuario img{
+	position: relative;
+	margin: auto;
+	width: 70px;
+	border-style: solid;
+	border-color: blue;
+	border-radius: 10px;
+	border-width: 1px;
+	top: 2px;
+}
+.data{ /*data e hora central em Js*/
+	margin:auto;	
+	height: 25px;
+	line-height: 25px;
+	width: 500px;
+	font-weight: 100;
+	top: -74px;
+	border-style: none solid solid solid;
+	border-color: white;
+	border-radius: 0px 0px 15px 15px;
+	box-shadow: 1px 1px 1px #888888;	
+	color:antiquewhite;
+	font-family: helvetica;	
+	text-align: center;
+}
+.verde{ /*cor da data e hora centrais*/
+	background-color: #166478;
+}
+
+/* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter)*/
+
+/*>>>>>>>>>>>>>> RODAPÉ <<<<<<<<<<<<<<<<<*/
+
+.rodape{
+	position: relative;
+	top: 255px;
+	border-radius: 7px;
+	border-color: #c6c6c6;
+	border-style: solid;
+	text-align: justify;
+	width: 800px;
+	height: 183px;
+	margin: auto;
+	background-color: #333;
+	color: #ccc
+}
+.rodape p{
+	font-size: .9em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.rodape span{
+	font-size: .8em;
+	text-align: center;
+}
+.social li{
+	display:inline;
+	margin: 1px;
+}
+
+.social li a{
+	padding: 10px
+}
+.social img{
+	width: 30px;
+	border-radius: 10px;
+}
+.hr hr{
+	position: relative;
+	top: 220px;
+}
+/* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleiton_Dsd (twitter)*/
+.conteudo{
+	position: relative;
+	margin: auto;
+	margin-top: 40px;
+	width: 700px;
+	height: 700px;
+	background-color: #F5F5DC ;
+	border-radius: 6px;
+	border-style: groove;
+	border-color:#166478 ;
+}
+.conteudo img{
+	position: relative;
+	float: right;
+	
+}
+.posicaoTitulo{
+	position: relative;
+	margin: auto;
+	text-align: center;
+	top: 100px;
+	width: 680px;
+	background-color: #166478;
+	color: #E8E8E8;
+	border-radius: 6px;
+}
+.posicaoTitulo h2{
+	position: relative;
+	margin: auto;
+	left: 210px;
+}
+.texto{	
+	position: relative;
+	margin: auto;
+	top: 120px;
+	margin: auto;
+	margin-left: 30px;	
+	margin-right:30px;	
+	background-color: #E8E8E8;	
+	text-align:justify;
+	font-family: arial;
+	font-size: 20px;
+	border-radius: 6px;	
+}
+.texto a{	
+	color: black;
+}
+.texto p{
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 10px;
+	position: relative;
+	top: -20px;
+}
+#sistema{
+	
+}
+
+/* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleiton_Dsd (twitter)*/

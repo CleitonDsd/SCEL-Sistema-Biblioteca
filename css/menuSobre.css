@@ -1,0 +1,312 @@
+/* Páginas Padrão *//* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter)*/
+*{	
+	margin-top: 0
+}
+.margem{ /*Dimensões da margem do site'*/
+max-width: 1280px;
+width:80%;
+padding:5px;
+margin: auto;  
+}
+.topo{ /*Topo do site, onde está localizado o menu, titulo...'*/
+background-color: #F5F5DC;
+padding: 5px;
+width: 1330px;
+height: 80px;	
+position: relative;
+margin: auto;
+border-width: 2px;
+border-radius: 15px;
+border-style: solid;
+border-color: black ;
+}
+.logoEtec img{ /*Imagem ao lado esquerdo do titulo principal do site'*/
+position: relative;
+margin: auto;
+width: 75px;
+border-style: solid;
+border-color: darkblue;
+border-radius: 10px;
+border-width: 1px;
+top: 2px;
+}
+.tituloPrincipal a{
+	text-decoration: none;
+	position: relative;
+	margin: auto;
+	font-family: sans-serif;
+	font-weight: bold;
+	color: gray;
+	top: -60px;
+	left: 100px;
+}
+.menuu{	/*Div, onde contem os menu {ul, li}...'*/	
+position: relative;
+float: right;
+right: 100px;
+top: -113px;
+border-radius: 10px 10px; 
+padding-right: 25px;
+}
+/* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter)*/
+
+/*>>>>>>>>>>>> menu  do topo do site <<<<<<<<<<<<<<<*/
+
+.menuu,
+.sub-menu { 
+	list-style: none;
+	background: #F5F5F5; /*cor do menu*/
+}
+.sub-menu {	/*cor do fundo do sub-menu*/
+	background: #E0EEEE;	
+}
+.menu a { 	
+	text-decoration: none;
+	display: block;
+	padding: 10px 10px;
+	color: gray; /*cor da fonte*/
+	font-family: sans-serif;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+.menu li {
+	list-style-type:none;	
+}
+.menu > li {
+	float: left;
+}
+.menu > li:hover { /*cor ao passar mouse sobre menu*/
+	background:  #166478;
+	border-radius: 6px;
+}
+.menu li a:hover{
+	color:antiquewhite;
+	font-family: helvetica;	
+	text-align: center;
+}
+.menu li:hover > .sub-menu {
+	display: block;
+}
+/* Sub-menu*/
+.sub-menu {	
+	text-align: left;
+	display: none;
+	position: absolute;
+	min-width: 50px;	
+}
+.sub-menu li:hover {
+	background:#166478;	
+	border-radius: 6px;
+}
+.sub-menu .sub-menu {	
+	top: 0;
+	left:100%;
+}
+/* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter)*/
+.fotoUsuario { /*foto do usuário*/
+	margin: auto;
+	position: relative;
+	top: -143px;
+	float: right;
+	left: 485px;
+	font-size: 13px;
+	font-family: inherit;
+}
+.fotoUsuario img{
+	position: relative;
+	margin: auto;
+	width: 70px;
+	border-style: solid;
+	border-color: blue;
+	border-radius: 10px;
+	border-width: 1px;
+	top: 2px;
+}
+.data{ /*data e hora central em Js*/
+	margin:auto;	
+	height: 25px;
+	line-height: 25px;
+	width: 500px;
+	font-weight: 100;
+	top: -74px;
+	border-style: none solid solid solid;
+	border-color: white;
+	border-radius: 0px 0px 15px 15px;
+	box-shadow: 1px 1px 1px #888888;	
+	color:antiquewhite;
+	font-family: helvetica;	
+	text-align: center;
+}
+.verde{ /*cor da data e hora centrais*/
+	background-color: #166478;
+}
+
+/* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter)*/
+
+/*>>>>>>>>>>>>>> RODAPÉ <<<<<<<<<<<<<<<<<*/
+
+.rodape{
+	position: relative;
+	top: 175px;
+	border-radius: 7px;
+	border-color: #c6c6c6;
+	border-style: solid;
+	text-align: justify;
+	width: 800px;
+	height: 170px;
+	margin: auto;
+	background-color: #333;
+	color: #ccc
+}
+.rodape p{
+	font-size: .9em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.rodape span{
+	font-size: .8em;
+	text-align: center;
+}
+.social li{
+	display:inline;
+	margin: 1px;
+}
+
+.social li a{
+	padding: 10px
+}
+.social img{
+	width: 30px;
+	border-radius: 10px;
+}
+.hr hr{
+	position: relative;
+	top: 120px;
+}
+/* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleiton_Dsd (twitter)*/
+
+/*>>>>>>>>>>>>>>>>>> Menu Central (alunos,emprestimos,livros e usuarios) <<<<<<<<<<<<<<<<<<<<<*/
+.menuCentral{
+	width: 450px;
+	height: 450px;
+	background-color: #166478;
+	position: relative;
+	margin: auto;
+	top: 50px;
+	border-radius: 6px;
+	border-style: groove;	
+	border-color: #166478;
+	box-shadow: 1px 1px 2px 4px;
+}
+.menuCentral:hover{
+	background-color: #4876FF;
+}
+.tabelaOpcoes{ /*Onde localiza-se a tabela/menu de opções'*/
+position: relative;
+top: -70px;
+width: 250px;
+height: 250px;	
+margin: auto;
+background-color: #E6E6FA;
+border-style: solid;
+border-color: black;
+border-radius: 7px;
+}
+.tituloTabela{
+	top: 3px;
+	background-color: #F5F5DC;
+	color: #166478;
+	border-radius: 6px;
+	position: absolute;
+	text-align: center;
+	font-size: 18px;
+	margin: auto;
+	font-weight: bold;
+	width: 450px;
+}
+.tituloTabela a{
+	color: #166478;	
+	text-decoration: none;
+}
+.tituloTabela a:hover{
+	text-decoration: none;
+	color: #166478;	
+	font-family: helvetica;	
+	text-align: center;
+	font-weight: bold;
+	position: relative;
+	-moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+.tabelaOpcoes td{
+	border-style: solid;
+	border-color: black;
+	text-align: center;
+	border-radius: 7px;
+}
+.tabelaOpcoes a{
+	text-decoration: none;
+	color: #166478 ;
+	font-family: helvetica;	
+	text-align: center;
+}
+.tabelaOpcoes td:hover{
+	background-color: #000080;
+}
+.tabelaOpcoes a:hover{
+	text-decoration: none;
+	color:antiquewhite;
+	font-weight: bold;
+	font-family: helvetica;	
+	text-align: center;	
+}
+.tabelaOpcoes img{
+	width: 140px;
+}
+.menuCentral input[type=button]{ /*Botão do menu/tabela de opções'*/
+position: relative;
+left: 163px;
+top: 410px;
+width: 120px;
+height: 30px;
+color: white;
+border-radius: 6px 6px 6px 6px ;
+font-weight: bold;
+background-color: #B22222;	
+} 	
+.menuCentral input[type=button]:hover{
+	font-weight: bold;
+	background-color: #E6E6FA;	
+	color: #166478;
+	font-family: helvetica;	
+	text-align: center;
+	font-weight: bold;
+	position: relative;
+	border: 1px;
+	border-style: solid;
+	border-color: black;
+	-moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+.menuCentralEtec img{ /*Para arredondar o logo da Etec'*/
+border: 1px;
+border-color: blue;
+border-style: solid;
+margin: auto;
+border-radius: 150px;
+}
+.menuCentralDev img{ 
+	border: 1px;
+	border-color: black;
+	border-style: solid;
+	margin: auto;
+	border-radius: 150px;
+}
+.menuCentralEtec img{ /*Para arredondar o logo da Etec'*/
+margin: auto;
+border-radius: 150px;
+}

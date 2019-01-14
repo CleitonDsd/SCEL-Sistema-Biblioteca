@@ -1,0 +1,103 @@
+/* Páginas Padrão *//* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter)*/
+*{	
+	margin-top: 0;
+	font-family: helvetica;
+}
+.margem{ /*Dimensões da margem do site'*/
+max-width: 1280px;
+max-width: 1280px;
+width:80%;
+padding:5px;
+margin: auto;  
+}
+/* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleiton_Dsd (twitter)*/
+.conteudo{
+	position: relative;
+	margin: auto;
+	margin-top: 40px;
+	width: 700px;
+	height: 700px;
+	background-color: #F5F5DC ;
+	border-radius: 6px;
+	border-style: groove;
+	border-color:#166478 ;
+}
+.conteudo img{
+	position: relative;
+	float: left;
+	
+}
+.posicaoTitulo{
+	position: relative;
+	margin: auto;
+	text-align: center;
+	top: 100px;
+	width: 680px;
+	background-color: #166478;
+	color: #E8E8E8;
+	border-radius: 6px;
+}
+.posicaoTitulo h2{
+	position: relative;
+	margin: auto;
+	right: 70px;
+	text-align: center;
+}
+.texto{	
+	position: relative;
+	margin: auto;
+	top: 100px;
+	margin-left: 30px;	
+	margin-right:30px;	
+	/*background-color: #E8E8E8;*/
+}
+
+.texto #horarioFuncionamento{
+	font-weight: bold;
+}
+/*Slide*/
+.slide img{
+	width: 400px;
+	border-radius: 10px;
+	margin: auto;
+	float: left;
+	left: 170px;
+	top: 150px;
+	border-style: groove;
+	border-color: #166478;
+}
+#tituloConteudo a{
+	text-decoration: none;
+	color: #E8E8E8;;
+}
+.local{
+	width: 500px;
+	background-color: #CDBE70;
+	border-radius: 10px;
+	border-style: solid;
+	border-color: black;
+	margin: auto;
+	position: relative;
+	top: 200px;
+}
+#tituloLocal{
+	position: relative;
+	text-align: center;
+	color: white;
+	top: 10px;
+	left: 170PX;
+	font-weight: bold;
+	font-size: 20px;
+}
+.local iframe {
+	width: 400px;
+	height: 300px;
+	margin: auto;
+	margin-left: 50px;
+	border-radius: 10px;
+}
+.local legend{
+	text-decoration: none;
+	position: relative;
+	
+}

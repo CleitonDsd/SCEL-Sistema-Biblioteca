@@ -1,0 +1,227 @@
+/* Páginas Padrão *//* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter)*/
+/*Algumas funções serão comentadas, pois ainda não consigo manipular todas'*/
+
+/*<>Folha Padrão de CSS Para os menus do Site<>'*/
+/*<>Standard CSS Sheet for the menus of WebSite<>'*/
+
+
+.margem{ /*Dimensões da margem do site'*/
+max-width: 1280px; /*tamanho máximo que irá atingir'*/
+width:80%;
+padding:5px; /*Espaçamento dos 4 lados'*/
+margin: auto;  
+}
+/*----------- MENU PRINCIPAL DO SITE (mainMenu) ----------'*/
+.posicaoMenu{
+	position: relative;
+	margin: auto;
+	top: 50px;
+	width: 600px;
+	height: 350px;
+	background-color: #F5F5DC;
+	border-radius: 4px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	/*border: 1px;*/
+	box-shadow: 1px 5px 9px #888888;
+}
+#fieldMenu {
+	position: relative;
+	margin: auto;
+	top: 20px;
+	width: 500px;
+	height: 275px;
+	border-radius: 3px;
+	border-width: 1px;
+	border-color: darkgray;
+}
+#fieldMenu legend{
+	width: 150px;
+	text-align: center;
+	background-color:#8DB6CD;
+	color: #2F4F4F/*#F0FFFF*/;
+	font-weight: bold;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 5px;
+
+}
+.menuPrincipal{
+	position: relative;
+	margin: auto;
+	right: 104px;
+}
+.menuPrincipal ul{
+	position: relative;
+	list-style: none;
+	
+}
+.menuPrincipal li{
+	padding: 5px;
+	text-align: center;
+}
+.menuPrincipal button{
+	width: 140px;
+	background-color: #B0C4DE;
+}
+#sairSys {
+	background-color: tomato;
+}
+#sairSys:hover {
+	background-color: ;
+	font-weight: bold;
+	background-color: #EE3B3B;
+}
+.menuPrincipal button:hover{
+	background-color: #bbb;
+}
+#opcoesMenu a{
+	text-decoration: none;
+	color: black;
+}
+/*-------------------- MENU CADASTRO --------------'*/
+/*>>>>>>>>>>>>>>>>>> Menu Central (alunos,emprestimos,livros e usuarios) <<<<<<<<<<<<<<<<<<<<<*/
+.posicaoMenu2{
+	width: 450px;
+	height: 450px;
+	background-color: #DCDCDC ;
+	position: relative;
+	margin: auto;
+	top: 50px;
+	border-radius: 6px;
+	border-style: groove;	
+	border-color: #166478;
+	box-shadow: 1px 1px 2px 4px;
+}
+.posicaoMenu2:hover{
+	background-color: 	#9BCD9B;
+}
+.posicaoMenu2 button{  /*Botão do menu/tabela de opções'*/
+position: relative;
+left: 163px;
+top: 410px;
+width: 120px;
+height: 30px;
+color: white;
+border-radius: 6px 6px 6px 6px ;
+font-weight: bold;
+background-color: #B22222;	
+} 	
+.posicaoMenu2 button:hover{
+	
+	background-color: tomato;		
+	text-align: center;
+	font-weight: bold;
+	position: relative;
+	border: 1px;
+	border-style: solid;
+	border-color: black;
+	-moz-transform: scale(1.0);
+	-webkit-transform: scale(1.0);
+	transform: scale(1.0);
+}
+#voltarMenuCad a{
+	color: white;
+	text-decoration: none;
+}
+#voltarMenuCad a:hover{
+	font-weight: bold;
+	color: black;
+	font-family: helvetica;	
+}
+.tabelaOpcoes{
+	/*Onde localiza-se a tabela/menu de opções'*/
+	position: relative;
+	top: 10px;
+	width: 250px;
+	height: 250px;	
+	margin: auto;
+	background-color: gray;
+	border-style: solid;
+	border-color: black;
+	border-radius: 7px;
+}
+.tituloTabela{
+	top: 3px;
+	background-color: #F5F5DC;
+	color: #166478;
+	border-radius: 6px;
+	position: absolute;
+	text-align: center;
+	font-size: 18px;
+	margin: auto;
+	font-weight: bold;
+	width: 450px;
+}
+.tituloTabela a{
+	color: #166478;	
+	text-decoration: none;
+}
+.tituloTabela a:hover{
+	text-decoration: none;
+	color: #166478;	
+	font-family: helvetica;	
+	text-align: center;
+	font-weight: bold;
+	position: relative;
+	-moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+.tabelaOpcoes td{
+	border-style: solid;
+	border-color: black;
+	text-align: center;
+	border-radius: 7px;
+}
+.tabelaOpcoes a{
+	text-decoration: none;
+	color:antiquewhite;
+	font-family: helvetica;	
+	text-align: center;
+}
+.tabelaOpcoes td:hover{
+	background-color: #E6E6FA;
+}
+.tabelaOpcoes a:hover{
+	text-decoration: none;
+	color:#166478;
+	font-weight: bold;
+	font-family: helvetica;	
+	text-align: center;	
+}
+.tabelaOpcoes img{
+	width: 140px;
+}
+#lupa{
+	/*<>img do titulo do menu Consultas<>'*/
+	width: 15px;
+}
+#tituloCon{
+	/*<>titulo do menu Consultas<>'*/
+	background-color: #C0FF3E;
+}
+#tituloEmp{
+	/*<>titulo do menu Empréstimos<>'*/
+	background-color: #5D478B;		
+}
+#tituloEmp a {
+	
+	color: #F0FFFF;
+}
+#tituloSob{
+	/*<>titulo do menu Sobre<>'*/
+	background-color: #DAA520;
+}
+#tituloSob a{
+	color: black ;
+}
+/*Menu Sobre*/
+#logoEtecAbout, #logoDsdAbout, #logoSysAbout, #logoBibAbout {
+	border-width: 2px;
+	border-style: groove;
+	border-color: gray;
+	border-radius: 100px;
+}
