@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script> 
+	<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-3.2.0.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.mask.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="../js/additional-methods.min.js"></script>
+	<script type="text/javascript" src="../js/messages_pt_BR.js"></script>
+</head>
+<body>
+
+
+	<form class="formulario" method="POST" action="" name="formulario" id="formCadastro">	
+		<div class="container">
+			<div class="form-group">
+				<p id="">Nome:</p>
+				<input  type="text"  name="nomeAluno" size="35" placeholder="Fulano da Silva" class="form-control">
+			</div>
+
+			<div class="form-group">
+				<p>E-mail:</p>
+				<input type="email" name="emailAluno" size="35" placeholder="fulano@email" class="form-control">
+			</div>
+
+			<div class="form-group">
+				<p>RM:</p> <input type="number" name="rmAluno" size="10"  placeholder=""  class="form-control">
+			</div>
+
+			<div class="form-group">
+				<p>Modulo:</p>
+				<select name="moduloAluno" class="form-control" >						
+					<option value="1 modulo">1° Módulo</option>
+					<option value="2 modulo">2° Módulo</option>
+					<option value="3 modulo">3° Módulo</option>
+					<option value="4 modulo">4° Módulo</option>
+					<option value="5 modulo">5° Módulo</option>
+					<option value="6 modulo">6° Módulo</option>								
+				</select>							
+			</div>
+
+			<div class="form-group">
+				<p>Periodo:</p>
+				<select name="periodoAluno" class="form-control" >						
+					<option value="etim">ETIM</option>
+					<option value="noturno">Noturno</option>								
+				</select>				
+			</div>
+
+			<div class="form-group">
+				<p>Curso:</p>
+				<input type="text" name="cursoAluno" size="20" class="form-control">
+			</div>
+
+			<div class="form-group">
+			<p>Telefone:</p>
+			<input type="text" name="telefoneAluno" id="telefoneAluno"  size="15" placeholder="ex.: (xx)x xxxx-xxxx" class="form-control">	
+			</div>						
+
+
+			<div class="botoes">
+				<input type="reset" name="voltar" value="Limpar">
+				<input type="submit" name="cadastrar" onclick="return validar()" value="Cadastrar">
+				<button><a href="../html/paginaConstrucao.html">Voltar</a></button>							
+			</div>									
+		</div>
+	</form> 					
+
+</body>
+</html>
