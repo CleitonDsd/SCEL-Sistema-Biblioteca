@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
 	<title>Cadastro de Alunos - Biblioteca</title>
 
@@ -19,19 +19,23 @@
 	<!-- <>Library Files Used for Scripts'<> -->
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script> 
 	<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="../js/jquery-3.2.0.min.js"></script>
-	<script type="text/javascript" src="../js/bootstrap-notify.min.js"></script>
+	
 	<script type="text/javascript" src="../js/jquery.mask.min.js"></script>
 	<script type="text/javascript" src="../js/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="../js/additional-methods.min.js"></script>
 	<script type="text/javascript" src="../js/messages_pt_BR.js"></script>
+	
 
 	<!-- <>scripts de validação, confirmação de cadastro, máscara de campos, janela de confirmação<>' -->
 	<!-- <>validation scripts, registration confirmation, fields mask, window confirmation<>' -->
 	<script type="text/javascript" src="../js/script_validate.js"></script>
 	<script type="text/javascript" src="../js/script_confirmRegister.js"></script>
 	<script type="text/javascript" src="../js/script_maskField.js"></script>
-	<script type="text/javascript" src="../js/buttonConfirm.js"></script>
+	<script type="text/javascript" src="../js/script_functionsToForm.js"></script>
+
+	<!-- <>Sweet Alert - para notificações do site<>' -->
+	<!-- <>Sweet Alert - to alert <>'-->
+	<script type="text/javascript" src="../js/sweetalert2.all.js"></script>
 
 	<!-- <>Estilo em Css para arrumar a posição das mensagens obrigátorias, da validação de campos (script_validate.js)<>' -->
 	<!-- <>Style in Css to sort the position of mandatory messages, fields validation (script_validate.js)<>' -->
@@ -50,29 +54,28 @@
 		right: 165px;
 	}
 </style>
-<!-- <>Estilo em Css para editar o balão de mensagem exibindo sucesso ao cadastrar, pois o arquivo do "bootstrap_theme" estava desorganizando minha página<>' -->
-<!-- <>Style in Css to edit the message balloon showing success at registration, because the "bootstrap_theme" file was messing up my page<>' -->
+
+<!-- <>Estilo em Css para editar os botões de confirmação do Sweet Alert2<>' -->
+<!-- <>Style in Css to edit the confirmation buttons of the Sweet Alert2<>' -->
 <style type="text/css">
 
-.alert-success{
-	
-	text-align: center;
-	border-radius: 10px;
-	border-style: groove;
-	border-width: 2px;
-	border-color: black;
-	font-family: times new roman;
-
-}
-.alert-success button{
+/*<>Para arrumar a largura dos botões<>'*/
+/*<>To adjust the width of the buttons<>'*/
+.swal2-cancel, .swal2-confirm{
 	position: relative;
-	left: 250px;
-	width: 30px;
-	background-color: tomato;
-
-
+	top: 0px;
+	text-align: center;
+	width: 150px;
+	height: 50px;
+}
+/*<>Para alinhar os botões do pop-up<>'*/
+/*<>To align the pop-up buttons<>'*/
+.swal2-actions{
+	position: relative;
+	right: 85px;
 }
 </style>
+
 </head>
 <body>
 	<!-- Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter) -->
@@ -178,10 +181,10 @@
 					<img src="../images/aluno.png">
 					<a href=""><input type="file" name="fotoAluno" ></a>
 				</div>					
-				<form class="formulario" method="POST" action="" name="formulario" id="formCadastro" onsubmit="return confirmar()">	
+				<form class="formulario" method="POST" action="" name="formulario" id="formCadastro">	
 					<div class="row">
 						<p id="">Nome:</p>
-						<input type="text" name="nomeAluno" size="35" placeholder="Fulano da Silva">
+						<input type="text" name="nomeAluno" size="35" placeholder="Fulano da Silva" id="nomeAluno">
 					</div>
 
 					<div class="row">
@@ -218,7 +221,15 @@
 
 					<div class="row">
 						<p>Curso:</p>
-						<input  type="text"  name="cursoAluno"  size="20"  maxlength="45">
+						<!-- <input  type="text"  name="cursoAluno"  size="20"  maxlength="45"> -->
+						<select name="cursoAluno" >	
+							<option value="">selecione...</option>
+							<option value="1°">Administração </option>
+							<option value="2°">Cozinha</option>
+							<option value="3°">Enfermagem</option>
+							<option value="4°">Informática</option>
+							<option value="5°">Segurança do Trabalho</option>							
+						</select>		
 
 					</div>
 
@@ -228,12 +239,13 @@
 					</div>
 					<div class="botoes">												
 						<input type="reset" name="voltar" value="Limpar">
-						<input type="submit" name="cadastrar" onclick="return validar()" value="Cadastrar">
-						<button onclick="confirmarVoltar()" id="btnVoltar"><a href="../html/menuRegisters.html">Voltar</a></button>							
+
+						<input type="submit" name="cadastrar" id="btnEnviar"  value="Cadastrar" onclick="verificaCampo()">	
+						<button  id="btnVoltar" onclick="desejaVoltar()">Voltar</button>												
 					</div>									
 				</form> 					
 			</fieldset>
-		</div>	
+		</div>			
 		<div class="hr">
 			<hr>
 		</div>
@@ -273,15 +285,15 @@
 				</ul>
 			</center>				
 		</div>				
-	</div> -->
+	</div>
 </div>
 </body>
 </html>
 
 <?php
 
-// <>Arquivo de conexão com o banco de dados<>'
-// <>File to connect in database<>'
+	// <>Arquivo de conexão com o banco de dados<>'
+	// <>File to connect in database<>'
 require 'config.php';
 
 if (isset ($_POST['nomeAluno']) && !empty($_POST['nomeAluno'])) {
@@ -305,17 +317,16 @@ if (isset ($_POST['nomeAluno']) && !empty($_POST['nomeAluno'])) {
 	moduloAluno	    = '$modulo', 
 	periodoAluno    = '$periodo', 
 	cursoAluno 		= '$curso',
-	telefoneAluno 	= '$telefone'; 
-	fotoAluno  		= '$foto'";
+	telefoneAluno 	= '$telefone'"; 
+	
 
 	/*aqui eu executo a query*/
 	$pdo->query($sql); /*posso usar a variavel $pdo sem declarar porque ela foi declarada em config.php*/
 
 	/*Continua na página*/ 
 	// <>Continue in page<>' 
-	header("Location:../php/formRegisterStudents.php");
+	header("../php/formRegisterStudents.php");
 }
-
 ?>
 
 
