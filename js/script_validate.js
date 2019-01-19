@@ -4,9 +4,9 @@
 /*<>Arquivo Para Validação dos Campos do Formulário<>'*/
 /*<>File to validate fields in form<>'*/
 
-$(document).ready(function(){
-			$("#formCadastro").validate({
-				rules:{
+$(document).ready(function(){	
+	$("#formCadastro").validate({
+		rules:{
 					// nome do campo do Formulário {
 					// 	se é requerido, obrigatório (required),
 					// 	máximo de caracteres (maxlength),
@@ -40,15 +40,11 @@ $(document).ready(function(){
 					},
 					cursoAluno: {
 						required: true,
-						minlength: 5,						
 						maxlength: 50
 					},
 					telefoneAluno: {
 						required: true,						
-					},						
-				},
-				submitHandler: function(form){
-					alert("Cadastrado com Sucesso")						
-				}				
+					}						
+				},												
 			})
-		})
+})
