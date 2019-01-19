@@ -14,7 +14,7 @@ function verificaCampo() {
 			title: 'Ops...',
 			type: 'warning',
 			text: " Verifique se todos os campos estão preenchidos",
-			timer: 2500
+			timer: 2500			
 		})	
 	}
 }
