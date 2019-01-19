@@ -194,19 +194,19 @@
 
 					<div class="row">
 						<p>RM:</p>
-						<input type="number" name="rmAluno" size="10"  placeholder=""  maxlength="10">
+						<input type="number" name="rmAluno" id="rmAluno" size="10"  placeholder= ""  maxlength="10">
 					</div>
 
 					<div class="row">
 						<p>Modulo:</p>
 						<select name="moduloAluno" >	
-							<option value="">selecione...</option>
-							<option value="1°">1°</option>
-							<option value="2°">2°</option>
-							<option value="3°">3°</option>
-							<option value="4°">4°</option>
-							<option value="5°">5°</option>
-							<option value="6°">6°</option>								
+							<option>selecione...</option>
+							<option>1°</option>
+							<option>2°</option>
+							<option>3°</option>
+							<option>4°</option>
+							<option>5°</option>
+							<option>6°</option>								
 						</select>							
 					</div>
 
@@ -223,12 +223,12 @@
 						<p>Curso:</p>
 						<!-- <input  type="text"  name="cursoAluno"  size="20"  maxlength="45"> -->
 						<select name="cursoAluno" >	
-							<option value="">selecione...</option>
-							<option value="1°">Administração </option>
-							<option value="2°">Cozinha</option>
-							<option value="3°">Enfermagem</option>
-							<option value="4°">Informática</option>
-							<option value="5°">Segurança do Trabalho</option>							
+							<option>selecione...</option>
+							<option>Administração </option>
+							<option>Cozinha</option>
+							<option>Enfermagem</option>
+							<option>Informática</option>
+							<option>Segurança do Trabalho</option>							
 						</select>		
 
 					</div>
@@ -240,7 +240,8 @@
 					<div class="botoes">												
 						<input type="reset" name="voltar" value="Limpar">
 
-						<input type="submit" name="cadastrar" id="btnEnviar"  value="Cadastrar" onclick="verificaCampo()">	
+						<input type="submit" name="cadastrar" id="btnEnviar"  value="Cadastrar" onclick="verificaCampo()">
+
 						<button  id="btnVoltar" onclick="desejaVoltar()">Voltar</button>												
 					</div>									
 				</form> 					
@@ -306,7 +307,6 @@ if (isset ($_POST['nomeAluno']) && !empty($_POST['nomeAluno'])) {
 	$periodo  = addslashes($_POST['periodoAluno']);
 	$curso    = addslashes($_POST['cursoAluno']);
 	$telefone = addslashes($_POST['telefoneAluno']);
-	$foto 	  = addslashes($_POST['fotoAluno']);
 
 	/*aqui eu monto a query*/
 	$sql ="INSERT INTO alunos SET
@@ -323,10 +323,14 @@ if (isset ($_POST['nomeAluno']) && !empty($_POST['nomeAluno'])) {
 	/*aqui eu executo a query*/
 	$pdo->query($sql); /*posso usar a variavel $pdo sem declarar porque ela foi declarada em config.php*/
 
-	/*Continua na página*/ 
-	// <>Continue in page<>' 
-	header("../php/formRegisterStudents.php");
 }
 ?>
+<script type="text/javascript">
+		swal('Boa!', 'Cadastro Conluído com Sucesso!', 'success')
+</script>
 
-
+<?php 
+	/*Continua na página*/ 
+	// <>Continue in page<>' 
+	header("Refresh: 0; ../php/formRegisterStudents.php");
+?>
