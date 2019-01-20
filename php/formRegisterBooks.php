@@ -214,7 +214,7 @@
 				<div class="botoes" id="botoesLivro">
 					<input type="reset" name="voltar" value="Limpar">
 					<input type="submit" name="cadastrar" value="Cadastrar">
-					<button id="botoesLivro"><a href="../html/paginaConstrucao.html">Voltar</a></button>							
+					<button id="botoesLivro"><a href="../html/paginaConstrucao.html">Voltar</a></button>						
 				</div>									
 			</form> 					
 		</fieldset>

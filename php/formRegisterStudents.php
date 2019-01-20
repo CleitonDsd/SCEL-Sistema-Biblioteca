@@ -323,14 +323,11 @@ if (isset ($_POST['nomeAluno']) && !empty($_POST['nomeAluno'])) {
 	/*aqui eu executo a query*/
 	$pdo->query($sql); /*posso usar a variavel $pdo sem declarar porque ela foi declarada em config.php*/
 
+
+	echo "<script> window.location = '../php/formRegisterStudents.php</script>";
+	
+	echo "<script>swal('Boa!', 'Cadastrado com Sucesso!', 'success');</script>";	
+	
 }
 ?>
-<script type="text/javascript">
-		swal('Boa!', 'Cadastro Conluído com Sucesso!', 'success')
-</script>
 
-<?php 
-	/*Continua na página*/ 
-	// <>Continue in page<>' 
-	header("Refresh: 0; ../php/formRegisterStudents.php");
-?>
