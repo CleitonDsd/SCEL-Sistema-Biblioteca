@@ -122,19 +122,33 @@
 				<li>
 					<li><a href="../html/menuAbout.html">Sobre</a>
 						<ul class="sub-menu">
-							<li><a href="../html/aboutLibrary.html">Biblioteca</a></li>						
-							<li><a href="../html/pageInDevelopment.html">Etec</a></li>
+							<li><a href="../html/aboutLibrary.html">Biblioteca</a></li>													
 							<li><a href="../html/aboutDeveloper.html">Desenvolvedor</a></li>											
-							<li><a href="../html/pageInDevelopment.html">Sistema</a></li>							
 						</ul>
 					</li>
-				</li>
-				<li>
-					<a href="../php/login.php">Sair</a>				
-				</li>		
+				</li>				
+				<button id="menuTopoSair"> Sair </button> 									
+				<!-- Script do botão sair  -->
+				<script type="text/javascript">
+					document.getElementById('menuTopoSair').onclick = function(){
+						swal({
+							title: 'Você  tem certeza que deseja Sair?',
+							text: '!!!',
+							type: 'warning',
+							showCancelButton: true,
+							confirmButtonColor: '#3085d6',
+							cancelButtonColor: '#d33',
+							confirmButtonText: 'Continuar',
+							cancelButtonText: 'Cancelar'
+						}).then((result) => {
+							if (result.value) {
+								window.location = '../php/login.php';			
+							}
+						})
+					};
+				</script>			
 			</div>
 		</ul>
-
 		<div class="ConteudoLogo">
 			<!-- Logo da Etec -->
 			<!-- Etec Image -->
@@ -325,7 +339,7 @@ if (isset ($_POST['nomeAluno']) && !empty($_POST['nomeAluno'])) {
 
 
 	echo "<script> window.location = '../php/formRegisterStudents.php</script>";
-	
+
 	echo "<script>swal('Boa!', 'Cadastrado com Sucesso!', 'success');</script>";	
 	
 }
