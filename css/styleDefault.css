@@ -105,7 +105,19 @@ border-radius: 4px;
 	top: 0;
 	/*left:100%;*/
 }
+#menuTopoSair{
+	position: relative;
+	margin: auto;
+	top: 0px;
+	width: 100px;
+	height: 20px;
 
+}
+#menuTopoSair:hover{
+	background-color: #8B1A1A;
+	color: #F0FFFF;
+
+}
 #logoEtecForm{
 	/*<>Logo Principal<>'*/
 	float: left;
