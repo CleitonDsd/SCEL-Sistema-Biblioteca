@@ -494,7 +494,11 @@ border-radius: 4px;
 #botoesUsuario input, #botoesUsuario button{
 	top: 15px;
 }
-
+/*Posição dos Botões do formulário de Cadastro de Livros*/
+#btnFormCadLivros{
+	position: relative;
+	top: -50px;
+}
 /*------------ BOTÕES DE CONSULTA ----------*/
 #botoesConsulta, #botoesConsultaEmp {
 	position: relative;
@@ -503,6 +507,7 @@ border-radius: 4px;
 #botoesConsultaEmp{
 	top: -30px;
 }
+
 /*------------ */
 .verde{ /*cor da data e hora centrais*/
 	background-color: #166478;
