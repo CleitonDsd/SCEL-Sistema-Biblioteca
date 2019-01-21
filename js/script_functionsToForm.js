@@ -16,9 +16,19 @@ function verificaCampo() {
 			text: " Verifique se todos os campos estão preenchidos",
 			timer: 2500			
 		})	
-	}
+	}	
 }
 
+function verificaCampo2(){
+	if ($('#nomeLivro' == "")) {
+		swal({
+			title: 'Ops...',
+			type: 'warning',
+			text: " Verifique se todos os campos estão preenchidos",
+			timer: 2500			
+		})	
+	}
+}
 // <>Função para o Alert Sweet, para confirmar volta para outra página<>'
 // <>function for Alert Sweet, to confirm back to another page<>'
 function desejaVoltar(){
