@@ -48,3 +48,48 @@ $(document).ready(function(){
 				},												
 			})
 })
+
+// Formulário de Livros
+$(document).ready(function(){	
+	$("#formularioCadLivro").validate({
+		rules:{
+					// nome do campo do Formulário {
+					// 	se é requerido, obrigatório (required),
+					// 	máximo de caracteres (maxlength),
+					// 	minímo de caracteres (minlength),
+					// 	minímo de frases (minWords)
+					// }
+					nomeLivro: { 
+						required: true,
+						maxlength: 150,
+						minlength: 10
+					},
+					autorLivro: {
+						required: true,						
+						maxlength: 250,
+						minlength: 10,
+						minWords: 2
+					},
+					editoraLivro: {
+						required: true,
+						maxlength: 250,
+						minlength: 3
+					},	
+					edicaoLivro: {	
+						required: true,																
+					},				
+					ibsnLivro: {	
+						required: true,																
+					},	
+					publicacaoLivro: {	
+						required: true,																
+					},									
+					categoriaLivro: {
+						required: true,											
+					},
+					estoqueLivro: {
+						required: true,											
+					}							
+				},												
+			})
+})
