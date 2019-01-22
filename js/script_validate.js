@@ -97,12 +97,6 @@ $(document).ready(function(){
 $(document).ready(function(){	
 	$("#formCadastroUsuarios").validate({
 		rules:{
-					// nome do campo do Formulário {
-					// 	se é requerido, obrigatório (required),
-					// 	máximo de caracteres (maxlength),
-					// 	minímo de caracteres (minlength),
-					// 	minímo de frases (minWords)
-					// }
 					nomeUsuario: { 
 						required: true,
 						maxlength: 150,
@@ -114,20 +108,17 @@ $(document).ready(function(){
 						email: true,
 						maxlength: 250,
 						minlength: 10
-					},
+					},					
 					loginUsuario: {
 						required: true,
-						minlength: 3
-
-					},
+					},	
 					funcaoUsuario: {
 						required: true,
-					}
-					// senhaUsuario: {
-					// 	required: true,
-					// 	maxlength: 15,
-					// 	minlength: 4
-					// }										
+					},				
+					senhaUsuario: {
+						required: true,
+						minlength: 4
+					}					
 				},												
 			})
 })
