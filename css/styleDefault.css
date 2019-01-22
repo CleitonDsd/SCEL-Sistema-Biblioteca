@@ -492,13 +492,14 @@ border-radius: 4px;
 	top: 15px;
 }
 #botoesUsuario input, #botoesUsuario button{
-	top: 15px;
+	top: 0px;
 }
 /*Posição dos Botões do formulário de Cadastro de Livros*/
 #btnFormCadLivros{
 	position: relative;
 	top: -50px;
 }
+
 /*------------ BOTÕES DE CONSULTA ----------*/
 #botoesConsulta, #botoesConsultaEmp {
 	position: relative;
