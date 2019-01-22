@@ -16,11 +16,22 @@ function verificaCampo() {
 			text: " Verifique se todos os campos estão preenchidos",
 			timer: 2500			
 		})	
-	}	
+	}	  
 }
-
+// Formulário de Cadastro de Livros
 function verificaCampo2(){
 	if ($('#nomeLivro' == "")) {
+		swal({
+			title: 'Ops...',
+			type: 'warning',
+			text: " Verifique se todos os campos estão preenchidos",
+			timer: 2500			
+		})	
+	}
+}
+// Formulário de Cadastro de Usuários
+function verificaCampo3(){
+	if ($('#nomeUsuario' == "")) {
 		swal({
 			title: 'Ops...',
 			type: 'warning',
@@ -48,3 +59,18 @@ function desejaVoltar(){
 	})
 
 }
+
+// Função para validar senha no Formulário de Cadastro de Usuários
+// Function to validate password in the form Register Users
+$(function(){
+	$("#btnCad").click(function(){
+		var senha = $("#senhaUsuario").val();
+		var senha2 = $("#Confirmsenha").val();
+		if(senha != senha2){
+			event.preventDefault();
+			document.getElementById("Confirmsenha").style.backgroundColor = "tomato";
+			// alert("As senhas não são iguais!");			
+			swal('Algo deu errado!', 'Os campos de senha devem ser iguais', 'error');
+		}
+	});
+});
