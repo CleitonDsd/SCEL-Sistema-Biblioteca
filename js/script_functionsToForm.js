@@ -74,3 +74,18 @@ $(function(){
 		}
 	});
 });
+
+
+
+$(document).ready(function () {
+	$("input[name='rmAluno']").blur(function () {
+		var $nomeAluno = $("input[name='nomeAluno']");        
+		var rmAluno = $(this).val();
+
+		$.getJSON('formRegisterLoans.php', {rmAluno},
+			function(retorno){
+				$nomeAluno.val(retorno.nomeAluno);                
+			}
+			);        
+	});
+});

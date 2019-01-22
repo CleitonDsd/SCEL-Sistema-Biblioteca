@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 	<title>Formulário de Empréstimo - Biblioteca</title>
 	<meta charset="utf-8">
-
+	
 	<link rel="shortcut icon" href="../images/favicon.ico" >
 
 	<!-- <>Link do Arquivo padrão de Css para os Menus<>' -->
@@ -31,6 +32,13 @@
 	<script type="text/javascript" src="../js/script_confirmRegister.js"></script>
 	<script type="text/javascript" src="../js/script_maskField.js"></script>
 	<script type="text/javascript" src="../js/script_functionsToForm.js"></script>
+
+		
+	<!-- <>scripts Para buscar o Rm do Aluno e trazer o Nome<>' -->
+	<!-- <>script to query student Id and get the Name<>' -->
+	<script type="text/javascript" src="../js/script_getRm.js"></script>
+
+
 
 	<!-- <>Sweet Alert - para notificações do site<>' -->
 	<!-- <>Sweet Alert - to alert <>'-->
