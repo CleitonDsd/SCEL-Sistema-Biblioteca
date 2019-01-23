@@ -32,13 +32,13 @@
 	<script type="text/javascript" src="../js/script_confirmRegister.js"></script>
 	<script type="text/javascript" src="../js/script_maskField.js"></script>
 	<script type="text/javascript" src="../js/script_functionsToForm.js"></script>
-
 		
 	<!-- <>scripts Para buscar o Rm do Aluno e trazer o Nome<>' -->
 	<!-- <>script to query student Id and get the Name<>' -->
 	<script type="text/javascript" src="../js/script_getRm.js"></script>
-
-
+	<!-- <>scripts Para buscar o Livro e trazer a Editora <>' -->
+	<!-- <>scripts To search the Book and bring the Publisher<>' -->
+	<script type="text/javascript" src="../js/script_getEditora.js"></script>
 
 	<!-- <>Sweet Alert - para notificações do site<>' -->
 	<!-- <>Sweet Alert - to alert <>'-->
@@ -46,14 +46,14 @@
 
 	<!-- <>Estilo em Css para arrumar a posição das mensagens obrigátorias, da validação de campos (script_validate.js)<>' -->
 	<!-- <>Style in Css to sort the position of mandatory messages, fields validation (script_validate.js)<>' -->
-	<style> #nomeAluno-error, #rmAluno-error, #moduloAluno-error, #periodoAluno-error, #cursoAluno-error, #telefoneAluno-error {
+	<style> #dataEmprestimo-error, #dataDevolucao-error, #rmAluno-error{
 		position: absolute;
 		color: red;
 		right: 260px;
 		font-size: 15px;
 		text-align: center;			
 	}
-	#emailAluno-error{
+	#nomeLivro-error, #editoraLivro-error, #nomeAluno-error{
 		position: absolute;
 		color: red;
 		text-align: center;
@@ -192,13 +192,13 @@
 	<div class="posicaoForm" id="formEmprestimos">
 		<fieldset class="fieldForm" id="fieldEmprestimos">
 			<legend>Empréstimos</legend>
-			<h3>Formulário de Empréstimo</h3>
+			<h3>Formulário de Empréstimo Loans</h3>
 			<div class="itensForm">
 				<div class="fotoCadastro">
 					<img src="../images/aluno.png">
 					<a href=""><input type="file" name=""></a>
 				</div>					
-				<form class="formulario" method="post" action="">
+				<form class="formulario" id="formCadEmp" method="post" action="">
 
 					<div class="row">
 						<p>Data:</p>
@@ -251,7 +251,7 @@
 
 					<div class="botoes" id="botoesEmprestimos">
 						<input type="reset" name="voltar" value="Limpar">
-						<input type="submit" name="cadastrar" value="Cadastrar">
+						<input type="submit" name="cadastrar" value="Cadastrar" onclick="verificaCampo2()">
 						<button id=""><a href="../html/paginaConstrucao.html">Voltar</a></button>							
 					</div>	
 					
@@ -301,6 +301,44 @@
 
 <?php
 
+// 	// <>Arquivo de conexão com o banco de dados<>'
+// 	// <>File to connect in database<>'
+// require 'config.php';
+
+// if (isset ($_POST['rmAluno']) && !empty($_POST['rmAluno'])) {
+
+// 	/*aqui eu pego os dados que o usuario digitou la no meu formulario*/  
+// 	$dataEmp 	  = addslashes($_POST['dataEmprestimo']);
+// 	$dataDev 	  = addslashes($_POST['dataDevolucao']);
+// 	$livro  	  = addslashes($_POST['nomeLivro']);
+// 	$editora  	  = addslashes($_POST['editoraLivro']);
+// 	$rmAluno  	  = addslashes($_POST['rmAluno']);
+// 	$nome  		  = addslashes($_POST['nomeAluno']);
+// 	$quantidade   = addslashes($_POST['observacaoEmprestimo']);    
+// 	$observacao   = addslashes($_POST['observacaoEmprestimo']);
+	
+
+// 	/*aqui eu monto a query*/
+// 	$sql ="INSERT INTO emprestimos SET
+
+// 	dataEmprestimo		 = '$dataEmp', 
+// 	dataDevolucao   	 = '$dataDev', 
+// 	nomeLivro	    	 = '$livro', 
+// 	editoraLivro    	 = '$editora', 
+// 	rmAluno 			 = '$rmAluno',
+// 	nomeAluno 			 = '$nome', 
+// 	observacaoEmprestimo = '$quantidade',
+// 	observacaoEmprestimo = '$observacao'"; 
+	
+
+// 	/*aqui eu executo a query*/
+// 	$pdo->query($sql); /*posso usar a variavel $pdo sem declarar porque ela foi declarada em config.php*/
 
 
+// 	echo "<script> window.location = '../php/formRegisterStudents.php</script>";
+
+// 	echo "<script>swal('Boa!', 'Cadastrado com Sucesso!', 'success');</script>";	
+	
+// }
 ?>
+
