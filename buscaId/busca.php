@@ -1,9 +1,3 @@
-<!-- /* PHP *//* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter)*/
-/*Algumas funções serão comentadas, pois ainda não consigo manipular todas'*/
-
-/*<>Código para Pegar o Rm do Aluno Trazer o nome Form de Empréstimos<>'*/
-/*<>Code to get Rm<>'*/
- -->
 <?php
 
 include_once './conecta.php';
@@ -24,9 +18,8 @@ if(!empty($rmAluno)){
     if($resultado_aluno->rowCount() != 0){
         $row_aluno = $resultado_aluno->fetch(PDO::FETCH_ASSOC);
         $array_valores['nomeAluno'] = $row_aluno['nomeAluno'];         
-    }else{                
-        $array_valores['nomeAluno'] = 'Aluno não encontrado'; 
-
+    }else{
+        $array_valores['nomeAluno'] = 'Aluno não encontrado';        
     }
     echo json_encode($array_valores);
 }

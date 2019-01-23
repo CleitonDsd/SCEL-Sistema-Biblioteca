@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-	<title>Cadasqwawtro de Alunos - Biblioteca</title>
 
+	<title>Formulário de Empréstimo - Biblioteca</title>
 	<meta charset="utf-8">
-
+	
 	<link rel="shortcut icon" href="../images/favicon.ico" >
 
 	<!-- <>Link do Arquivo padrão de Css para os Menus<>' -->
@@ -32,10 +32,10 @@
 	<script type="text/javascript" src="../js/script_confirmRegister.js"></script>
 	<script type="text/javascript" src="../js/script_maskField.js"></script>
 	<script type="text/javascript" src="../js/script_functionsToForm.js"></script>
-
+		
 	<!-- <>scripts Para buscar o Rm do Aluno e trazer o Nome<>' -->
 	<!-- <>script to query student Id and get the Name<>' -->
-	<script type="text/javascript" src="../js/script_getRm.js"></script>
+	<script type="text/javascript" src="personalizado.js"></script>
 
 	<!-- <>Sweet Alert - para notificações do site<>' -->
 	<!-- <>Sweet Alert - to alert <>'-->
@@ -43,14 +43,14 @@
 
 	<!-- <>Estilo em Css para arrumar a posição das mensagens obrigátorias, da validação de campos (script_validate.js)<>' -->
 	<!-- <>Style in Css to sort the position of mandatory messages, fields validation (script_validate.js)<>' -->
-	<style> #nomeAluno-error, #rmAluno-error, #moduloAluno-error, #periodoAluno-error, #cursoAluno-error, #telefoneAluno-error {
+	<style> #dataEmprestimo-error, #dataDevolucao-error, #rmAluno-error{
 		position: absolute;
 		color: red;
 		right: 260px;
 		font-size: 15px;
 		text-align: center;			
 	}
-	#emailAluno-error{
+	#nomeLivro-error, #editoraLivro-error, #nomeAluno-error{
 		position: absolute;
 		color: red;
 		text-align: center;
@@ -166,10 +166,8 @@
 		</div>							
 	</div>
 </div>
-<div class="margem">			
-	<!--<> Script em JS para pegar dd/mm/yyyy - hh:mm:ss <>`-->	 
-	<!-- <>Script em JS to Get Date Time<>` -->
-	<div class = "data " >
+<div class="margem">				
+	<div class = "data " > <!-- Script em JS para pegar dd/mm/yyyy - hh:mm:ss -->
 		<script> 
 			var data  = new Date()
 			var dias  = data.getDay()
@@ -187,89 +185,79 @@
 			var strData  = diaSemana[dias] + ", " + hoje + " de " + meses[mes] + " de " + ano + ", " + strHora
 			document.write(strData)
 		</script>			
-	</div>				
-	<!-- <>Div da Poscição do Formulário<>`	 -->														
-	<!-- <>Div of form position<>` -->
-	<div class="posicaoForm">
-		<fieldset class="fieldForm">
-			<legend>Alunos</legend>
-			<h3>Cadastro de Alunos</h3>
+	</div>																							
+	<div class="posicaoForm" id="formEmprestimos">
+		<fieldset class="fieldForm" id="fieldEmprestimos">
+			<legend>Empréstimos</legend>
+			<h3>Formulário de Empréstimo Loans</h3>
 			<div class="itensForm">
 				<div class="fotoCadastro">
 					<img src="../images/aluno.png">
-					<a href=""><input type="file" name="fotoAluno" ></a>
+					<a href=""><input type="file" name=""></a>
 				</div>					
-				<form class="formulario" method="POST" action="" name="formulario" id="formCadastro">	
+				<form class="formulario" id="formCadEmp" method="post" action="">
+
 					<div class="row">
-						<p id="">Nome:</p>
-						<input type="text" name="nomeAluno" size="35" placeholder="Fulano da Silva" id="nomeAluno">
+						<p>Data:</p>
+						<input type="date" id="dataEmprestimo" name="dataEmprestimo" size="35">
 					</div>
 
 					<div class="row">
-						<p>E-mail:</p>
-						<input type="email" name="emailAluno" size="35" placeholder="fulano@email">
+						<p>Entrega:</p>
+						<input type="date" id="dataDevolucao" name="dataDevolucao" size="35">
+					</div>
+
+					<div class="row">
+						<p>Livro:</p>
+						<input type="text" id="nomeLivro" name="nomeLivro" size="35" placeholder="nome do Livro">
+					</div>
+
+					<div class="row">
+						<p>Editora:</p>
+						<input type="text" id="editoraLivro" name="editoraLivro" size="35" placeholder="Editora">	
 					</div>
 
 					<div class="row">
 						<p>RM:</p>
-						<input type="number" name="rmAluno" id="rmAluno" size="10"  placeholder= ""  maxlength="10">
+						<input type="text" id="rmAluno" name="rmAluno" size="10" placeholder="Rm do Aluno" 
+						>	
 					</div>
 
 					<div class="row">
-						<p>Modulo:</p>
-						<select name="moduloAluno" >	
+						<p>Aluno:</p>
+						<input type="text" id="nomeAluno" name="nomeAluno" size="35" placeholder="Nome do Aluno">	
+					</div>	
+
+					<div class="row">
+						<p> Quant.:</p>
+						<select id="quantidadeRetirada" name="quantidadeRetirada" >						
 							<option>selecione...</option>
-							<option>1°</option>
-							<option>2°</option>
-							<option>3°</option>
-							<option>4°</option>
-							<option>5°</option>
-							<option>6°</option>								
-						</select>							
-					</div>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>																	
+						</select>																		
+					</div>	
 
 					<div class="row">
-						<p>Periodo:</p>
-						<select name="periodoAluno" >	
-							<option value="">selecione...</option>					
-							<option value="etim">ETIM</option>
-							<option value="noturno">Noturno</option>								
-						</select>				
-					</div>
+						<p>Obs.:</p>
+						<textarea id="observacaoEmprestimo" name="observacaoEmprestimo" placeholder="Digite alguma observação"></textarea>
 
-					<div class="row">
-						<p>Curso:</p>
-						<!-- <input  type="text"  name="cursoAluno"  size="20"  maxlength="45"> -->
-						<select name="cursoAluno" >	
-							<option>selecione...</option>
-							<option>Administração </option>
-							<option>Cozinha</option>
-							<option>Enfermagem</option>
-							<option>Informática</option>
-							<option>Segurança do Trabalho</option>							
-						</select>		
+					</div>	
 
-					</div>
-
-					<div class="row">
-						<p>Telefone:</p>
-						<input type="text"  name="telefoneAluno"  id="telefoneAluno"   size="15"  placeholder="ex.: (xx)x xxxx-xxxx">							
-					</div>
-					<div class="botoes">												
+					<div class="botoes" id="botoesEmprestimos">
 						<input type="reset" name="voltar" value="Limpar">
-
-						<input type="submit" name="cadastrar" id="btnEnviar"  value="Cadastrar" onclick="verificaCampo()">
-
-						<button  id="btnVoltar" onclick="desejaVoltar()">Voltar</button>												
-					</div>									
+						<input type="submit" name="cadastrar" value="Cadastrar" onclick="verificaCampo2()">
+						<button id=""><a href="../html/paginaConstrucao.html">Voltar</a></button>							
+					</div>	
+					
 				</form> 					
 			</fieldset>
-		</div>			
+		</div>
 		<div class="hr">
 			<hr>
 		</div>
-		<!-- <>Rodapé do Site contendo direitos autorais e redes para contato com o desenvolvedor<>' -->
-		<!-- <>Site footer containing copyrights and networks for contact with the developer<>' -->
 		<div class="rodape preto">					
 			<center><p>Cleiton Dsd | Etec Uirapuru</p></center>
 			<center><span>Copyright ©2000 -2019 www.etecuirapuru.com.br, TODOS OS DIREITOS RESERVADOS. Todo o conteúdo do site é de propriedade exclusiva da Etec Uirapuru. É vedada qualquer reprodução, total ou parcial, de qualquer elemento sem expressa autorização.A violação de qualquer direito mencionado implicará na responsabilização cível e criminal nos termos da Lei. Etec Uirapuru: São Paulo, SP - SP05570-30, (11) 3782-5376.</center></span><br><p> Desenvolvido por <cite>Cleiton Dias | &copy; Dsd Soluções Tecnológicas </p></cite>
@@ -305,47 +293,49 @@
 			</center>				
 		</div>				
 	</div>
-</div>
 </body>
 </html>
 
 <?php
 
-	// <>Arquivo de conexão com o banco de dados<>'
-	// <>File to connect in database<>'
-require 'config.php';
+// 	// <>Arquivo de conexão com o banco de dados<>'
+// 	// <>File to connect in database<>'
+// require 'config.php';
 
-if (isset ($_POST['nomeAluno']) && !empty($_POST['nomeAluno'])) {
+// if (isset ($_POST['rmAluno']) && !empty($_POST['rmAluno'])) {
 
-	/*aqui eu pego os dados que o usuario digitou la no meu formulario*/  
-	$nome 	  = addslashes($_POST['nomeAluno']);
-	$email 	  = addslashes($_POST['emailAluno']);
-	$rmAluno  = addslashes($_POST['rmAluno']);
-	$modulo   = addslashes($_POST['moduloAluno']);    
-	$periodo  = addslashes($_POST['periodoAluno']);
-	$curso    = addslashes($_POST['cursoAluno']);
-	$telefone = addslashes($_POST['telefoneAluno']);
-
-	/*aqui eu monto a query*/
-	$sql ="INSERT INTO alunos SET
-
-	nomeAluno 		= '$nome', 
-	emailAluno	    = '$email', 
-	rmAluno 		= '$rmAluno',
-	moduloAluno	    = '$modulo', 
-	periodoAluno    = '$periodo', 
-	cursoAluno 		= '$curso',
-	telefoneAluno 	= '$telefone'"; 
+// 	/*aqui eu pego os dados que o usuario digitou la no meu formulario*/  
+// 	$dataEmp 	  = addslashes($_POST['dataEmprestimo']);
+// 	$dataDev 	  = addslashes($_POST['dataDevolucao']);
+// 	$livro  	  = addslashes($_POST['nomeLivro']);
+// 	$editora  	  = addslashes($_POST['editoraLivro']);
+// 	$rmAluno  	  = addslashes($_POST['rmAluno']);
+// 	$nome  		  = addslashes($_POST['nomeAluno']);
+// 	$quantidade   = addslashes($_POST['observacaoEmprestimo']);    
+// 	$observacao   = addslashes($_POST['observacaoEmprestimo']);
 	
 
-	/*aqui eu executo a query*/
-	$pdo->query($sql); /*posso usar a variavel $pdo sem declarar porque ela foi declarada em config.php*/
+// 	/*aqui eu monto a query*/
+// 	$sql ="INSERT INTO emprestimos SET
 
-
-	echo "<script> window.location = '../php/formRegisterStudents.php</script>";
-
-	echo "<script>swal('Boa!', 'Cadastrado com Sucesso!', 'success');</script>";	
+// 	dataEmprestimo		 = '$dataEmp', 
+// 	dataDevolucao   	 = '$dataDev', 
+// 	nomeLivro	    	 = '$livro', 
+// 	editoraLivro    	 = '$editora', 
+// 	rmAluno 			 = '$rmAluno',
+// 	nomeAluno 			 = '$nome', 
+// 	observacaoEmprestimo = '$quantidade',
+// 	observacaoEmprestimo = '$observacao'"; 
 	
-}
+
+// 	/*aqui eu executo a query*/
+// 	$pdo->query($sql); /*posso usar a variavel $pdo sem declarar porque ela foi declarada em config.php*/
+
+
+// 	echo "<script> window.location = '../php/formRegisterStudents.php</script>";
+
+// 	echo "<script>swal('Boa!', 'Cadastrado com Sucesso!', 'success');</script>";	
+	
+// }
 ?>
 

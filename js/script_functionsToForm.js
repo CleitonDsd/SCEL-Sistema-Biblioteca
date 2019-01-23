@@ -40,6 +40,17 @@ function verificaCampo3(){
 		})	
 	}
 }
+// Formulário de Cadastro de Usuários
+function verificaCampo4(){
+	if ($('#nomeLivro' == "")) {
+		swal({
+			title: 'Ops...',
+			type: 'warning',
+			text: " Verifique se todos os campos estão preenchidos",
+			timer: 2500			
+		})	
+	}
+}
 // <>Função para o Alert Sweet, para confirmar volta para outra página<>'
 // <>function for Alert Sweet, to confirm back to another page<>'
 function desejaVoltar(){
@@ -72,20 +83,5 @@ $(function(){
 			// alert("As senhas não são iguais!");			
 			swal('Algo deu errado!', 'Os campos de senha devem ser iguais', 'error');
 		}
-	});
-});
-
-
-
-$(document).ready(function () {
-	$("input[name='rmAluno']").blur(function () {
-		var $nomeAluno = $("input[name='nomeAluno']");        
-		var rmAluno = $(this).val();
-
-		$.getJSON('formRegisterLoans.php', {rmAluno},
-			function(retorno){
-				$nomeAluno.val(retorno.nomeAluno);                
-			}
-			);        
 	});
 });
