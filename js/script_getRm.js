@@ -1,12 +1,16 @@
 
 $(document).ready(function () {
+	// <>pega o valor do campo com nome RM aluno. E quando clicar fora vai acessar a função<>'
     $("input[name='rmAluno']").blur(function () {
-
+    	// <> variáveis que vão receber os dados do campo<>'
         var $nomeAluno  = $("input[name='nomeAluno']");        
+        // recupera o RM do input e coloca na váriavel
         var rmAluno     = $(this).val();
-        
+        // <>Chama o arquivo responsável em buscar no Banco de Dados, e envia o RM pesquisado<>'
         $.getJSON('queryRm.php', {rmAluno},
+        	// <>Function vai recuperar o que esse arquivo retorna e colocar na variável 'retorno'<>'
             function(retorno){
+            	// <>A váriavel $nomeAluno vai receber o que vier de retorno da posição nomeAluno(input)<>'
                 $nomeAluno.val(retorno.nomeAluno);             
             }
         );        
