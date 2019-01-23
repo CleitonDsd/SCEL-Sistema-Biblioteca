@@ -32,7 +32,7 @@
 	<script type="text/javascript" src="../js/script_confirmRegister.js"></script>
 	<script type="text/javascript" src="../js/script_maskField.js"></script>
 	<script type="text/javascript" src="../js/script_functionsToForm.js"></script>
-		
+
 	<!-- <>scripts Para buscar o Rm do Aluno e trazer o Nome<>' -->
 	<!-- <>script to query student Id and get the Name<>' -->
 	<script type="text/javascript" src="../js/script_getRm.js"></script>
@@ -192,7 +192,7 @@
 	<div class="posicaoForm" id="formEmprestimos">
 		<fieldset class="fieldForm" id="fieldEmprestimos">
 			<legend>Empréstimos</legend>
-			<h3>Formulário de Empréstimo Loans</h3>
+			<h3>Formulário de Empréstimo</h3>
 			<div class="itensForm">
 				<div class="fotoCadastro">
 					<img src="../images/aluno.png">
@@ -303,42 +303,42 @@
 
 // 	// <>Arquivo de conexão com o banco de dados<>'
 // 	// <>File to connect in database<>'
-// require 'config.php';
+require 'config.php';
 
-// if (isset ($_POST['rmAluno']) && !empty($_POST['rmAluno'])) {
+if (isset ($_POST['rmAluno']) && !empty($_POST['rmAluno'])) {
 
-// 	/*aqui eu pego os dados que o usuario digitou la no meu formulario*/  
-// 	$dataEmp 	  = addslashes($_POST['dataEmprestimo']);
-// 	$dataDev 	  = addslashes($_POST['dataDevolucao']);
-// 	$livro  	  = addslashes($_POST['nomeLivro']);
-// 	$editora  	  = addslashes($_POST['editoraLivro']);
-// 	$rmAluno  	  = addslashes($_POST['rmAluno']);
-// 	$nome  		  = addslashes($_POST['nomeAluno']);
-// 	$quantidade   = addslashes($_POST['observacaoEmprestimo']);    
-// 	$observacao   = addslashes($_POST['observacaoEmprestimo']);
+	/*aqui eu pego os dados que o usuario digitou la no meu formulario*/  
+	$dataEmp 	  = addslashes($_POST['dataEmprestimo']);
+	$dataDev 	  = addslashes($_POST['dataDevolucao']);
+	$livro  	  = addslashes($_POST['nomeLivro']);
+	$editora  	  = addslashes($_POST['editoraLivro']);
+	$rmAluno  	  = addslashes($_POST['rmAluno']);
+	$nome  		  = addslashes($_POST['nomeAluno']);
+	$quantidade   = addslashes($_POST['quantidadeRetirada']);    
+	$observacao   = addslashes($_POST['observacaoEmprestimo']);
 	
 
 // 	/*aqui eu monto a query*/
-// 	$sql ="INSERT INTO emprestimos SET
+ 	$sql ="INSERT INTO emprestimos SET
 
-// 	dataEmprestimo		 = '$dataEmp', 
-// 	dataDevolucao   	 = '$dataDev', 
-// 	nomeLivro	    	 = '$livro', 
-// 	editoraLivro    	 = '$editora', 
-// 	rmAluno 			 = '$rmAluno',
-// 	nomeAluno 			 = '$nome', 
-// 	observacaoEmprestimo = '$quantidade',
-// 	observacaoEmprestimo = '$observacao'"; 
+	dataEmprestimo		 = '$dataEmp', 
+	dataDevolucao   	 = '$dataDev', 
+	nomeLivro	    	 = '$livro', 
+	editoraLivro    	 = '$editora', 
+	rmAluno 			 = '$rmAluno',
+	nomeAluno 			 = '$nome', 
+	quantidadeRetirada = '$quantidade',
+	observacaoEmprestimo = '$observacao'"; 
 	
 
-// 	/*aqui eu executo a query*/
-// 	$pdo->query($sql); /*posso usar a variavel $pdo sem declarar porque ela foi declarada em config.php*/
+	/*aqui eu executo a query*/
+	$pdo->query($sql); /*posso usar a variavel $pdo sem declarar porque ela foi declarada em config.php*/
 
 
-// 	echo "<script> window.location = '../php/formRegisterStudents.php</script>";
+	echo "<script> window.location = '../php/formRegisterStudents.php</script>";
 
-// 	echo "<script>swal('Boa!', 'Cadastrado com Sucesso!', 'success');</script>";	
+	echo "<script>swal('Boa!', 'Cadastrado com Sucesso!', 'success');</script>";	
 	
-// }
+}
 ?>
 
