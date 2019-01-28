@@ -39,7 +39,7 @@
 		if(mysqli_affected_rows($conn) != 0){
 			echo "
 				<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/php/Biblioteca_Git/php/pageQueryStudents.php'>
-				<script type=\"text/javascript\">
+				<script type=\"text/javascript\"> 
 					alert(\"Dados do Aluno Alterado com Sucesso.\");
 				</script>
 			";	
