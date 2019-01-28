@@ -1,0 +1,271 @@
+/* Páginas Padrão *//* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter)*/
+/*Algumas funções serão comentadas, pois ainda não consigo manipular todas'*/
+
+/*<>Folha Padrão de CSS Para as Páginas de Consulta do Site<>'*/
+/*<>Standard CSS Sheet for the Query WebSite<>'*/
+
+
+*{	
+	margin-top: 0;
+	font-family: helvetica;
+}
+.margem{ /*Dimensões da margem do site'*/
+max-width: 1280px; /*tamanho máximo que irá atingir'*/
+width:80%;
+padding:5px; /*Espaçamento dos 4 lados'*/
+margin: auto;  
+}
+/*-----------------------------------------TOPO DO SITE-------------------------------------------------*/		
+/* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter)'*/
+
+.topo{ /*Topo do site, onde está localizado o menu, titulo...'*/
+background-color: #F5F5DC;
+padding: 5px; /*Espaçamento dos 4 lados'*/
+width: /*1024/1300px -> responsivo'*/ 80.96923076923077%;
+height: 150px;	
+position: relative;
+margin: auto;
+border-width: 2px;
+border-style: solid;
+border-color: black ;
+border-radius: 2px; /*arrendonda a borda'*/
+}
+/*---------------------menu--------------------*/
+.menuu{	/*Div, onde contem os menu {ul, li}...'*/		
+position: relative;
+height: 40px;
+top: -5px;
+padding-top: 1px; /*define espaçamento superior*'/
+margin-top: -5px; /*margem superior*/
+text-align: center; 
+border-radius: 4px;
+
+}
+.menuu,
+.sub-menu {
+	list-style: none;
+	/*background:  #166478;*/ /*cor do menu'*/
+	background:#333333;
+	color: #bbbbbb; /*cor da fonte'*/
+}
+.sub-menu {	/*cor do fundo do sub-menu*/
+	/*<>sub-menu, só ira aparecer quando o mouse for passado por cima do de algumas li do menu<>'*/
+	background: #F8F8FF;	
+	padding: 1px;
+	border-radius: 2px;
+	border-style: solid;
+	border-color: beige;
+
+}
+.menu a {	
+	/*<>links do menu<>'*/
+	text-decoration: none; /*remove o underscore que se forma em links'*/
+	display: block; /*elemento em bloco - lado do outro'*/
+	padding: 15px 10px; /*Espaçamento' */
+	line-height: 5px; /*controla os espaçamentos entre as linhas de um texto'*/
+	color: #bbbbbb; /*cor da fonte'*/
+	font-family: sans-serif;
+	font-size: 12px;
+	text-transform: uppercase; /*deixa todos caracteres maiúsculos'*/
+	font-weight: 700; /*especifica intensidade da fonte'*/
+}
+.menu li {
+	/*<>LI's do Menu (Home, Sair...)<>'*/
+	list-style-type:none; /*define estilo de listas'*/
+}
+.menu > li {
+	margin: auto; 
+	display: inline-block;	
+}
+.menu > li:hover { /*cor ao passar mouse sobre menu*/
+	background:  #E8E8E8;	
+}
+.menu li a:hover{
+	color:black;
+	font-family: helvetica;	
+}
+.menu li:hover > .sub-menu {
+	display: block; /*elemento em bloco - um abaixo do outro*/
+}
+.sub-menu a{
+	color: black;
+}
+.sub-menu {	
+	text-align: left;
+	display: none;
+	position: absolute;
+	min-width: 50px;	
+	color: black;
+}
+.sub-menu li:hover {
+	background-color: #bbbbbb;
+	text-decoration: underline; 
+
+}
+.sub-menu .sub-menu {	
+	top: 0;
+	/*left:100%;*/
+}
+#menuTopoSair{
+	position: relative;
+	margin: auto;
+	top: 0px;
+	width: 100px;
+	height: 20px;
+
+}
+#menuTopoSair:hover{
+	background-color: #8B1A1A;
+	color: #F0FFFF;
+
+}
+#logoEtecForm{
+	/*<>Logo Principal<>'*/
+	float: left;
+	width: 100%;
+	max-width: 150px;
+	height: 100px;
+	position: relative;
+	margin: auto;
+	margin-left: /*40px -> responsivo*/ 3.91625%;
+	padding-top: /*10px -> responsivo*/ 0.9765625%;
+	background-size: 100% auto; /*100% width Cima e Baixo */
+}
+#fotoUsuario {
+	/*<>Foto de quem estará utilizando o sistema<>';*/
+	position: relative;
+	float: right;
+	margin-right: /*20px -> responsivo*/1.953125%;
+	width: 100%;
+	max-width: 100px;
+	border-style: solid;
+	border-width: 1px;
+	top:1px;
+	background-color: #B5B5B5;
+	border-color: gray;
+	border-style: groove;
+}
+
+/*<>Botões CRUD das páginas de consulta e alteração, botões do bootstrap'<>*/
+/*<>CRUD button of query and edit pages, bootsratp buttons'<>*/
+
+.tituloPrincipalCon h1{
+	float: left;
+	text-decoration: none;
+	color: #4F4F4F ;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 2em;	
+	position: relative;
+	top: 30px;
+}
+.verde{ /*cor da data e hora centrais*/
+	background-color: #166478;
+}
+
+
+/*-----------------------------------------DIV MARGEM-------------------------------------------------------*/		
+/* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter)*/
+
+.data{ 
+	/*<>Data e hora ao centro do site em Js<>'*/
+	/*background-color: #8B1A1A;*/
+	margin:auto;	
+	height: 25px;
+	line-height: 25px;
+	width: 100%;
+	max-width: 500px;
+	font-weight: 500;
+	top: -74px;
+	border-style: none solid solid solid;
+	border-color: black;
+	border-radius: 0px 0px 15px 15px;
+	box-shadow: 1px 1px 1px #888888;	/*define sombra da div*/
+	color: #F0FFFF;
+	font-family: helvetica;	
+	text-align: center;
+}
+
+/* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter)*/
+
+/*>>>>>>>>>>>>>> RODAPÉ <<<<<<<<<<<<<<<<<*/
+
+.rodape{
+	/*rodapé do site, parte inferior do site, onde contém as redes sociais<>'*/
+	position: relative;
+	top: 175px;
+	border-radius: 7px;
+	border-color: #c6c6c6;
+	border-style: solid;
+	text-align: justify;
+	width: 100%;
+	max-width: 800px;
+	height: 183px;
+	margin: auto;
+	background-color: #333;
+	color: #ccc
+}
+.rodape p{
+	font-size: .9em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.rodape span{
+	font-size: .8em;
+	text-align: center;
+}
+.social li{
+	display:inline; /*ocupa só a largura do conteudo do bloco*/
+	margin: 1px;
+}
+
+.social li a{
+	padding: 10px
+}
+.social img{
+	width: 30px;
+	border-radius: 10px;
+}
+.hr hr{
+	position: relative;
+	top: 120px;
+}
+/* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleiton_Dsd (twitter)*/
+/*----------------------------Formulários Bootstrap----------------------------*/
+
+/*<>Botões CRUD da página de consulta e edição'<>*/
+/*<>CRUD button of query and edit page'<>*/
+#btnsConsultaAltera{
+	position: relative;
+	margin: auto;
+	top: 0px;
+}
+/*<>Intercalação de cores da tabela'<>*/
+/*css global tabela*/
+.table{border-collapse: collapse;}
+
+/*colocando bordas nas linhas*/
+.table tr{border:1px black solid;}
+
+/*Definido cor das linhas pares*/
+.table tr:nth-child(even) {background: #FFF}
+
+/*Definindo cor das Linhas impáres*/
+.table tr:nth-child(odd) {background: #EEE} 
+
+/*<>Cor de fundo dos titulos da coluna da tabela'<>      */
+th{
+	background:#696969;
+	color: #F0FFF0; /*cor da fonte'*/
+}
+/*<>Botões da tabela'<>*/
+tr button{
+	width: 70px;
+	height: 25px;
+	font-weight: 400;
+}
+/*<>Cor ao passar nas linhas da tabela'<>*/
+tr:hover td {
+	background:#CCC;
+}
