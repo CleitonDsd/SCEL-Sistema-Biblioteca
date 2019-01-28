@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<title>Cadasqwawtro de Alunos - Biblioteca</title>
+	<title>Cadastro de Alunos - Biblioteca</title>
 
 	<meta charset="utf-8">
 
@@ -200,6 +200,12 @@
 					<a href=""><input type="file" name="fotoAluno" ></a>
 				</div>					
 				<form class="formulario" method="POST" action="" name="formulario" id="formCadastro">	
+
+					<div class="row">
+						<p>RM:</p>
+						<input type="number" name="rmAluno" id="rmAluno" size="5"  placeholder= "Rm do Aluno"  maxlength="10">
+					</div>
+
 					<div class="row">
 						<p id="">Nome:</p>
 						<input type="text" name="nomeAluno" size="35" placeholder="Fulano da Silva" id="nomeAluno">
@@ -208,12 +214,7 @@
 					<div class="row">
 						<p>E-mail:</p>
 						<input type="email" name="emailAluno" size="35" placeholder="fulano@email">
-					</div>
-
-					<div class="row">
-						<p>RM:</p>
-						<input type="number" name="rmAluno" id="rmAluno" size="10"  placeholder= ""  maxlength="10">
-					</div>
+					</div>					
 
 					<div class="row">
 						<p>Modulo:</p>
@@ -231,9 +232,10 @@
 					<div class="row">
 						<p>Periodo:</p>
 						<select name="periodoAluno" >	
-							<option value="">selecione...</option>					
-							<option value="etim">ETIM</option>
-							<option value="noturno">Noturno</option>								
+							<option>selecione...</option>
+							<option>ETIM</option>
+							<option>Manhã</option>
+							<option>Noturno</option>								
 						</select>				
 					</div>
 
@@ -244,6 +246,7 @@
 							<option>selecione...</option>
 							<option>Administração </option>
 							<option>Cozinha</option>
+							<option>Nutrição</option>
 							<option>Enfermagem</option>
 							<option>Informática</option>
 							<option>Segurança do Trabalho</option>							
