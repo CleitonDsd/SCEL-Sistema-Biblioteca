@@ -336,7 +336,7 @@ border-radius: 4px;
 .formulario input[type=text], [type=email], select, textarea{
 	/*<>campos de resposta do form<>'*/
 	position: relative;
-	margin-bottom: -2px; /*espaçamento inferior*/
+	margin-bottom: -10px; /*espaçamento inferior*/
 	left: 70px;
 	top: -38px; 
 	border-radius: 5px;
@@ -583,4 +583,11 @@ input::-webkit-search-cancel-button {
 }
 .pesquisa input::-webkit-input-placeholder {
 	color: #999;
+}
+
+/*<>Botões CRUD das páginas de consulta e alteração, botões do bootstrap'<>*/
+/*<>CRUD button of query and edit pages, bootsratp buttons'<>*/
+#btnsConsultaAltera{
+	position: relative;
+	top: 0px;	
 }
