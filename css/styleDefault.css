@@ -158,6 +158,19 @@ border-radius: 4px;
 	font-weight: bold;
 	font-size: 2em;
 }
+/*<>Botões CRUD das páginas de consulta e alteração, botões do bootstrap'<>*/
+/*<>CRUD button of query and edit pages, bootsratp buttons'<>*/
+
+.tituloPrincipalCon h1{
+	float: left;
+	text-decoration: none;
+	color: #4F4F4F ;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 2em;	
+	position: relative;
+	top: 30px;
+}
 
 /*-----------------------------------------DIV MARGEM-------------------------------------------------------*/		
 /* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter)*/
@@ -180,9 +193,6 @@ border-radius: 4px;
 	font-family: helvetica;	
 	text-align: center;
 }
-/*.verde{ cor da data e hora centrais
-	background-color: #166478;
-}*/
 
 /* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter)*/
 
@@ -419,7 +429,7 @@ border-radius: 4px;
 	/*"transfom" permite dar zoom nos elementos; */
 	/*"webkit" define que só os browsers que possuem essa estrutura que vão conseguir ler; */
 }
-	
+
 /*---------- Botoes do form -----------*/
 .botoes input, button{	
 	top: 35px;
@@ -585,9 +595,26 @@ input::-webkit-search-cancel-button {
 	color: #999;
 }
 
-/*<>Botões CRUD das páginas de consulta e alteração, botões do bootstrap'<>*/
-/*<>CRUD button of query and edit pages, bootsratp buttons'<>*/
+/*<>Botões CRUD da página de consulta e edição'<>*/
+/*<>CRUD button of query and edit page'<>*/
 #btnsConsultaAltera{
 	position: relative;
-	top: 0px;	
+	margin: auto;
+	top: 0px;
+}
+/*<>Intercalação de cores da tabela'<>*/
+/*css global tabela*/
+.table{border-collapse: collapse;}
+
+/*colocando bordas nas linhas*/
+.table tr{border:1px black solid;}
+
+/*Definido cor das linhas pares*/
+.table tr:nth-child(even) {background: #FFF}
+
+/*Definindo cor das Linhas impáres*/
+.table tr:nth-child(odd) {background: #EEE}       
+th{
+	background:#696969;
+	color: #F0FFF0; /*cor da fonte'*/
 }

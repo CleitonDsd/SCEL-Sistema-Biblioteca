@@ -5,11 +5,15 @@
 	<meta charset="utf-8">
 	<link rel="shortcut icon" href="../images/favicon.ico" >
 	<link rel="stylesheet" type="text/css" href="../css/styleDefault.css">
-	<link rel="stylesheet" type="text/javascript" href="../js/menuDropDown.js">
+	
+
+	<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../js/script_GetDataUsers.js"></script>
+
 </head>
 <body>
 	<!-- Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter) -->
-		<div class="topo" style=""> <!-- parte do topo do site, onde ficaram os menus -->
+	<div class="topo" style=""> <!-- parte do topo do site, onde ficaram os menus -->
 		<div class="menuu ">
 			<ul class="menu ">
 				<li>
@@ -103,7 +107,7 @@
 			<legend>
 				<div class="Busca">
 					<form class="pesquisa">
-						<input type="search" placeholder="Pesquisar..." class="pesquisar">
+						<input type="search" name="emailUsuario" placeholder="Pesquisar..." class="pesquisar">
 					</form>
 				</div>	
 			</legend>					
@@ -111,37 +115,38 @@
 			<div class="itensForm">
 				<div class="fotoCadastro">
 					<img src="../images/aluno.png">
-					<a href=""><input type="file" name=""></a>
+					<a href=""><input type="file"></a>
 				</div>					
 				<form class="formulario" method="post" action="">							
 					<p>Nome:</p>
-					<input type="text" name="nome" size="35" placeholder="Fulano da Silva" maxlength="100">
+					<input type="text" name="nomeUsuario" size="35" placeholder="Fulano da Silva" maxlength="100">
 
 					<p>E-mail:</p>
-					<input type="email" name="email" size="35" placeholder="fulano@email" maxlength="100">
+					<input type="email" name="emailUsuario" size="35" placeholder="fulano@email" maxlength="100">
 
 					<p>Usuário:</p>
-					<input type="email" name="email" size="35" placeholder="nome de usuário" maxlength="100">
+					<input type="email" name="loginUsuario" size="35" placeholder="nome de usuário" maxlength="100">
 
 					<p>Função:</p>
-					<select name="modulo" class="funcao">						
-						<option value="1 modulo">Aluno/Ajudante</option>
-						<option value="2 modulo">Professor</option>
-						<option value="3 modulo">Administrador</option>
+					<select name="funcaoUsuario" class="funcao">										
+						<option>selecione...</option>	
+						<option>Aluno/Ajudante</option>
+						<option>Administrador</option>
+						<option>Professor</option>
+						<option>Outro</option>
 					</select>																					
 					<p>Senha:</p>
-					<input type="password" name="" size="13" placeholder="*******" maxlength="30">							
+					<input type="password" name="senhaUsuario" size="" placeholder="*******" maxlength="30">							
 					<p></p>
-					<input type="password" name="" size="13" placeholder="repita a senha" maxlength="30">
+					<input type="password" name="senhaUsuario" size="" placeholder="repita a senha" maxlength="30">
 
 					<p>Obs.:</p>
-					<textarea placeholder="Escreva alguma observação"></textarea>	
+					<textarea name="observacaoUsuario" placeholder="Escreva alguma observação"></textarea>	
 				</div>	
 				<div class="botoes" id="botoesConsultaEmp">
 					<button type="voltar" ><a href="">Voltar</a></button>	
-					<input type="reset" name="limpar" value="Limpar">
-					<input type="submit" name="cadastrar" value="Cadastrar">						
-					<button type="editar"><a href="">Editar</a></button>
+					<input type="reset" name="limpar" value="Limpar">					
+					<button type="submit"><a href="">Editar</a></button>
 				</div>							
 			</form> 					
 		</fieldset>
