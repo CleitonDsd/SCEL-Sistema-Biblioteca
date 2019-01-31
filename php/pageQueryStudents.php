@@ -1,30 +1,23 @@
 <?php
 include_once("conecta.php");
-$result_alunos = "SELECT * FROM alunos";
+
+$result_alunos = "SELECT * FROM alunos ";
 $resultado_alunos = mysqli_query($conn, $result_alunos);
 ?>
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
 	<title>Consulta de Alunos - Biblioteca</title>
-	<!-- <>Arquivo Css padrão da página'<> -->
-	<!-- <>Standard file to the page'<> -->
-	<link rel="stylesheet" type="text/css" href="../css/styleQuery.css">
-
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="../images/favicon.ico" >
+	<link rel="stylesheet" type="text/css" href="../css/styleDefault.css">
+	
+	<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../js/script_GetDataStudents.js"></script>
+	<script type="text/javascript" src="../js/sweetalert2.all.js"></script>
 
-	<link href="../css/bootstrap.min.css" rel="stylesheet">
-
-	<!-- <>Para o campo de consuta - Arquivos~Bootstrap'<> -->
-	<!-- <>To input search'<> -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.quicksearch/2.3.1/jquery.quicksearch.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
 </head>
 <body>
-
 	<!-- Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter) -->
 	<div class="topo" style=""> <!-- parte do topo do site, onde ficaram os menus -->
 		<div class="menuu ">
@@ -90,12 +83,12 @@ $resultado_alunos = mysqli_query($conn, $result_alunos);
 			<img src="../images/Login.png" id="fotoUsuario"><br>					
 		</div>
 
-		<div class="tituloPrincipalCon"> <!-- Corresponde a div em que possui o titulo Principal -->
+		<div class="tituloPrincipal"> <!-- Corresponde a div em que possui o titulo Principal -->
 			<h1>Biblioteca</h1>
 		</div>							
 	</div>
 </div>
-<div class="margem">		
+<div class="margem">				
 	<div class = "data verde" > <!-- Script em JS para pegar dd/mm/yyyy - hh:mm:ss -->
 		<script> 
 			var data  = new Date()
@@ -114,255 +107,97 @@ $resultado_alunos = mysqli_query($conn, $result_alunos);
 			var strData  = diaSemana[dias] + ", " + hoje + " de " + meses[mes] + " de " + ano + ", " + strHora
 			document.write(strData)
 		</script>			
-	</div>	
-
-	<div class="container theme-showcase" role="main">
-		<div class="page-header">
-			<h1>Registro de Alunos</h1>			
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<table class="table" id="table">
-					<div class="form-group input-group">
-						<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-						<input name="consulta" id="txt_consulta" placeholder="Consultar..." type="text" class="form-control">
-					</div>					
-					<thead>						
-						<tr id="tr2">
-							<th >#</th>
-							<th>Nome do Aluno</th>
-							<th>RM</th>
-							<th>E-Mail</th>
-							<th>Ação</th>							
-						</tr>
-					</thead>
-					<tbody>
-						<?php while($rows_alunos = mysqli_fetch_assoc($resultado_alunos)){ ?>
-						<tr>
-							<td><?php echo $rows_alunos['idAluno']; ?></td>
-							<td><?php echo $rows_alunos['nomeAluno']; ?></td>
-							<td><?php echo $rows_alunos['rmAluno']; ?></td>
-							<td><?php echo $rows_alunos['emailAluno']; ?></td>
-							<td>
-								<button id="btnsConsultaAltera" type="button" class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal<?php echo $rows_alunos['idAluno']; ?>">Visualizar</button>
-								<!-- <>Botão de Editar'<> -->
-								<button id="btnsConsultaAltera" type="button" class="btn btn-xs btn-warning" data-toggle="modal" data-target="#exampleModal"
-
-								data-whatever			= "<?php echo $rows_alunos['idAluno']; 	    ?>"
-								data-whateverrm			= "<?php echo $rows_alunos['rmAluno']; 	    ?>"
-								data-whatevernome		= "<?php echo $rows_alunos['nomeAluno'];     ?>"
-								data-whateveremail		= "<?php echo $rows_alunos['emailAluno'];    ?>"
-								data-whatevermodulo		= "<?php echo $rows_alunos['moduloAluno'];   ?>"
-								data-whateverperiodo	= "<?php echo $rows_alunos['periodoAluno'];  ?>"
-								data-whatevercurso		= "<?php echo $rows_alunos['cursoAluno'];    ?>"
-								data-whatevertelefone	= "<?php echo $rows_alunos['telefoneAluno']; ?>"
-
-								>Editar</button>
-
-								<button id="btnsConsultaAltera" type="button" class="btn btn-xs btn-danger">Apagar</button>
-							</td>
-						</tr>
-
-						<!--<> Inicio Modal<>' -->
-						<div class="modal fade" 
-						id="myModal<?php echo $rows_alunos['idAluno']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-
-						<div class="modal-dialog" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-									<h4 class="modal-title text-center" id="myModalLabel">
-										<?php echo $rows_alunos['idAluno']; ?>	-
-										<?php echo $rows_alunos['nomeAluno']; ?>						
-									</h4>
-								</div>
-								<div class="modal-body">	
-									<div class="form-group">
-										<label class="control-label">Id:</label>
-										<p><?php echo $rows_alunos['idAluno']; 	  	?></p>
-									</div>
-									<hr>
-									<div class="form-group">
-										<label for="message-text" class="control-label">RM:</label>
-										<p><?php echo $rows_alunos['rmAluno']; 	  	?></p>
-									</div>
-									<hr>
-									<div class="form-group">
-										<label for="recipient-name" class="control-label">Nome:</label>
-										<p><?php echo $rows_alunos['nomeAluno'];    ?></p>
-									</div>
-									<hr>
-									<div class="form-group">
-										<label for="message-text" class="control-label">E-mail:</label>
-										<p><?php echo $rows_alunos['emailAluno'];   ?></p>
-									</div>
-									<hr>
-									<div class="form-group">
-										<label for="message-text" class="control-label">Modulo:</label>
-										<p><?php echo $rows_alunos['moduloAluno'];  ?></p>
-									</div>
-									<hr>
-									<div class="form-group">
-										<label for="message-text" class="control-label">Periodo:</label>
-										<p><?php echo $rows_alunos['periodoAluno']; ?></p>
-									</div>
-									<hr>
-									<div class="form-group">
-										<label for="message-text" class="control-label">Curso:</label>
-										<p><?php echo $rows_alunos['cursoAluno'];   ?></p>
-									</div>
-									<hr>
-									<div class="form-group">
-										<label for="message-text" class="control-label">Telefone:</label>
-										<p><?php echo $rows_alunos['telefoneAluno'];?></p>
-									</div>
-									<hr>
-
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Fim Modal -->
-					<?php } ?>
-				</tbody>
-			</table>
-		</div>
-	</div>
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="exampleModalLabel">Aluno</h4>
-				</div>
-				<div class="modal-body">
-					<form method="POST" action="http://localhost/php/Biblioteca_Git/php/processQueryStudents.php" enctype="multipart/form-data">
-
-						<div class="form-group">
-							<label for="message-text" class="control-label">RM:</label>
-							<input name="rmAluno" class="form-control" id="rmAluno"></input>
-						</div>
-
-						<div class="form-group">
-
-							<label for="recipient-name" class="control-label">Nome:</label>
-							<input name="nomeAluno" type="text" class="form-control" id="recipient-name">
-
-						</div>
-
-						<div class="form-group">
-
-							<label for="message-text" class="control-label">E-mail:</label>
-							<input name="emailAluno" type="email" class="form-control" id="emailAluno"></input>
-
-						</div>
-
-						<div class="form-group">
-
-							<label for="message-text" class="control-label">Modulo:</label>
-							<!-- <input name="moduloAluno" class="form-control" id="moduloAluno"></input> -->
-							<select name="moduloAluno" id="moduloAluno" class="form-control">	
-								<option>selecione...</option>
-								<option>1°</option>
-								<option>2°</option>
-								<option>3°</option>
-								<option>4°</option>
-								<option>5°</option>
-								<option>6°</option>								
-							</select>
-
-						</div>
-
-						<div class="form-group">
-
-							<label for="message-text" class="control-label">Periodo:</label>
-							<!-- <input name="rm" class="form-control" id="detalhes"></input> -->
-							<select name="periodoAluno" class="form-control" id="periodoAluno">							
-								<option>selecione...</option>
-								<option>ETIM</option>
-								<option>Manhã</option>
-								<option>Noturno</option>
-							</select>
-
-						</div>
-
-						<div class="form-group">
-
-							<label for="message-text" class="control-label">Curso:</label>
-							<!-- <input name="rm" class="form-control" id="detalhes"></input> -->
-							<select name="cursoAluno" class="form-control" id="cursoAluno" >	
-								<option>selecione...</option>
-								<option>Administração </option>
-								<option>Cozinha</option>
-								<option>Nutrição</option>
-								<option>Enfermagem</option>
-								<option>Informática</option>
-								<option>Segurança do Trabalho</option>		
-
-							</select>
-						</div>
-
-						<div class="form-group">
-
-							<label for="message-text" class="control-label">Telefone:</label>
-							<input name="telefoneAluno" type="text" class="form-control" id="telefoneAluno">
-
-						</div>
-
-
-						<input name="idAluno" type="hidden" class="form-control" id="idAluno" value="">
-
-						<button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
-						<button type="submit" class="btn btn-danger">Alterar</button>
-
+	</div>										
+	<div class="posicaoForm" id="formConsulta">
+		<fieldset class="fieldForm" id="fieldConsultaAluno">
+			<legend>
+				<div class="Busca">
+					<form class="pesquisa">
+						<input type="search" name="rmAluno" placeholder="Pesquisar..." class="pesquisar" name="pesquisa">
 					</form>
-				</div>
-			</div>
+				</div>	
+			</legend>					
+			<h3 id="h3Con">Consulta de Alunos</h3>
+			<div class="itensForm">
+				<div class="fotoCadastro">
+					<img src="../images/aluno.png">
+					<a href=""><input type="file" name=""></a>
+				</div>					
+				<form class="formulario" method="post" action="">							
+					<div class="row">					
+						<p>ID:</p>
+						<input type="number" name="idAluno" placeholder="Id não pode ser Alterado">
+					</div>
+					<div class="row">					
+						<p>RM:</p>
+						<input type="number" name="rmAluno" id="rmAluno" size="5"  placeholder= "Rm do Aluno"  maxlength="10">
+					</div>
+
+					<div class="row">
+						<p id="">Nome:</p>
+						<input type="text" name="nomeAluno" size="35" placeholder="Fulano da Silva" id="nomeAluno">
+					</div>
+
+					<div class="row">
+						<p>E-mail:</p>
+						<input type="email" name="emailAluno" size="35" placeholder="fulano@email">
+					</div>					
+
+					<div class="row">
+						<p>Modulo:</p>
+						<input  type="text"  name="moduloAluno"  size="20"  maxlength="45">
+						<!-- <select name="moduloAluno" >	
+							<option>selecione...</option>
+							<option>1°</option>
+							<option>2°</option>
+							<option>3°</option>
+							<option>4°</option>
+							<option>5°</option>
+							<option>6°</option>								
+						</select>		 -->					
+					</div>
+
+					<div class="row">
+						<p>Periodo:</p>
+						<input  type="text"  name="periodoAluno"  size="20"  maxlength="45">							
+						<!-- <select name="periodoAluno" >	
+							<option>selecione...</option>
+							<option>ETIM</option>
+							<option>Manhã</option>
+							<option>Noturno</option>								
+						</select>				 -->
+					</div>
+
+					<div class="row">
+						<p>Curso:</p>
+						<input  type="text"  name="cursoAluno"  size="20"  maxlength="45">
+						<!-- <select name="cursoAluno" >	
+							<option>selecione...</option>
+							<option>Administração </option>
+							<option>Cozinha</option>
+							<option>Nutrição</option>
+							<option>Enfermagem</option>
+							<option>Informática</option>
+							<option>Segurança do Trabalho</option>							
+						</select>		 -->
+
+					</div>
+
+					<div class="row">
+						<p>Telefone:</p>
+						<input type="text"  name="telefoneAluno"  id="telefoneAluno"   size="15"  placeholder="ex.: (xx)x xxxx-xxxx">							
+					</div>
+					<div class="botoesCon botoes" id="botoesConsulta">
+						<button type="voltar" ><a href="">Voltar</a></button>	
+						<input type="reset" name="limpar" value="Limpar">											
+						<button type="submit"><a href="">Editar</a></button>
+					</div>							
+				</form> 					
+			</fieldset>
 		</div>
-	</div>
-
-
-
-
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="../js/bootstrap.min.js"></script>
-	<script type="text/javascript">
-		$('#exampleModal').on('show.bs.modal', function (event) {
-
-			  var button = $(event.relatedTarget) // Button that triggered the modal
-
-			  var recipient 		= button.data('whatever') // Extract info from data-* attributes
-			  var recipientrm 		= button.data('whateverrm')
-			  var recipientnome 	= button.data('whatevernome')
-			  var recipientemail 	= button.data('whateveremail')
-			  var recipientmodulo 	= button.data('whatevermodulo')
-			  var recipientperiodo 	= button.data('whateverperiodo')
-			  var recipientcurso 	= button.data('whatevercurso')
-			  var recipienttelefone = button.data('whatevertelefone')
-			  
-
-			  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-			  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-			  var modal = $(this)
-			  modal.find('.modal-title').text('ID Aluno: ' + recipient)
-
-			  modal.find('#idAluno').val(recipient)
-			  modal.find('#rmAluno').val(recipientrm)
-			  modal.find('#recipient-name').val(recipientnome)
-			  modal.find('#emailAluno').val(recipientemail)
-			  modal.find('#moduloAluno').val(recipientmodulo)
-			  modal.find('#periodoAluno').val(recipientperiodo)
-			  modal.find('#cursoAluno').val(recipientcurso)
-			  modal.find('#telefoneAluno').val(recipienttelefone)
-			  
-
-			  
-			})
-		</script>
-
-
+		<div class="hr">
+			<hr>
+		</div>
 		<div class="rodape preto">					
 			<center><p>Cleiton Dsd | Etec Uirapuru</p></center>
 			<center><span>Copyright ©2000 -2019 www.etecuirapuru.com.br, TODOS OS DIREITOS RESERVADOS. Todo o conteúdo do site é de propriedade exclusiva da Etec Uirapuru. É vedada qualquer reprodução, total ou parcial, de qualquer elemento sem expressa autorização.A violação de qualquer direito mencionado implicará na responsabilização cível e criminal nos termos da Lei. Etec Uirapuru: São Paulo, SP - SP05570-30, (11) 3782-5376.</center></span><br><p> Desenvolvido por <cite>Cleiton Dias | &copy; Dsd Soluções Tecnológicas </p></cite>
@@ -396,8 +231,42 @@ $resultado_alunos = mysqli_query($conn, $result_alunos);
 					</li>
 				</ul>
 			</center>				
-		</div>			
-	</div>			
-</div>
+		</div>				
+	</div>
 </body>
 </html>
+
+<?php 
+
+	include("conecta.php");
+	if (isset ($_POST['emailAluno']) && !empty($_POST['emailAluno'])) {
+
+		
+		$id  	 	= mysqli_real_escape_string($conn, $_POST['idAluno']);
+		$rm   		= mysqli_real_escape_string($conn, $_POST['rmAluno']);
+		$nome 		= mysqli_real_escape_string($conn, $_POST['nomeAluno']);
+		$email 		= mysqli_real_escape_string($conn, $_POST['emailAluno']);
+		$modulo  	= mysqli_real_escape_string($conn, $_POST['moduloAluno']);
+		$periodo  	= mysqli_real_escape_string($conn, $_POST['periodoAluno']);
+		$curso 	  	= mysqli_real_escape_string($conn, $_POST['cursoAluno']);
+		$telefone 	= mysqli_real_escape_string($conn, $_POST['telefoneAluno']);
+
+		$result_alunos = "UPDATE alunos SET
+
+		  nomeAluno 	= '$nome',
+		  rmAluno	 	= '$rm',
+		  emailAluno 	= '$email',
+		  moduloAluno 	= '$modulo',
+		  periodoAluno 	= '$periodo',
+		  cursoAluno 	= '$curso',
+		  telefoneAluno = '$telefone' 
+
+	 	 WHERE idAluno = '$id'";
+	
+	  	$resultado_alunos = mysqli_query($conn, $result_alunos);	
+
+	  	echo "<script> window.location = '../php/pageQueryStudents.php</script>";
+
+		echo "<script>swal('Boa!', 'Alterado com Sucesso!', 'success');</script>";	
+	}
+ ?>
