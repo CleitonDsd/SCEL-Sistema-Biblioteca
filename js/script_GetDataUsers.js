@@ -3,8 +3,9 @@ $(document).ready(function () {
 	// <>pega o valor do campo com email do usuario. E quando clicar fora vai acessar a função<>'
     $("input[name='emailUsuario']").blur(function () {
     	// <> variáveis que vão receber os dados do campo<>'
+        var $idlLogin            = $("input[name='idlLogin']");        
         var $nomeUsuario        = $("input[name='nomeUsuario']");    
-        var $emailUsuario       =$ ("input[name='emailUsuario']");    
+        var $emailUsuario       = $("input[name='emailUsuario']");    
         var $loginUsuario       = $("input[name='loginUsuario']");  
         var $funcaoUsuario      = $("select[name='funcaoUsuario']");  
         var $senhaUsuario       = $("input[name='senhaUsuario']");  
@@ -17,7 +18,8 @@ $(document).ready(function () {
         	// <>Function vai recuperar o que esse arquivo retorna e colocar na variável 'retorno'<>'
             function(retorno){
             	// <>A váriavel $emailusuario vai receber o que vier de retorno da posição nomeAluno(input)<>'
-                $nomeUsuario.val(retorno.nomeUsuario);             
+                $idlLogin.val(retorno.idlLogin);             
+                $nomeUsuario.val(retorno.nomeUsuario);    
                 $emailUsuario.val(retorno.emailUsuario);  
                 $loginUsuario.val(retorno.loginUsuario);
                 $funcaoUsuario.val(retorno.funcaoUsuario);

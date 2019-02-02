@@ -1,4 +1,7 @@
+/* Java Script *//* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter)*/
 
+/*<>Script Que Pega Os dos Campos do Formulário<>'*/
+/*<>File to validate fields in form<>'*/
 $(document).ready(function () {
     // <>pega o valor do campo com nome RM aluno. E quando clicar fora vai acessar a função<>'
     $("input[name='rmAluno']").blur(function () {
@@ -7,9 +10,9 @@ $(document).ready(function () {
         var $rmAluno        = $("input[name='rmAluno']");        
         var $nomeAluno      = $("input[name='nomeAluno']");
         var $emailAluno     = $("input[name='emailAluno']"); 
-        var $moduloAluno    = $("input[name='moduloAluno']"); 
-        var $periodoAluno   = $("input[name='periodoAluno']"); 
-        var $cursoAluno     = $("input[name='cursoAluno']"); 
+        var $moduloAluno    = $("select[name='moduloAluno']"); 
+        var $periodoAluno   = $("select[name='periodoAluno']"); 
+        var $cursoAluno     = $("select[name='cursoAluno']"); 
         var $telefoneAluno  = $("input[name='telefoneAluno']"); 
         // recupera o RM do input e coloca na váriavel
         var rmAluno     = $(this).val();
