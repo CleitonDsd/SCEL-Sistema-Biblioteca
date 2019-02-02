@@ -13,6 +13,10 @@ $(document).ready(function(){
 					// 	minímo de caracteres (minlength),
 					// 	minímo de frases (minWords)
 					// }
+					rmAluno: {
+						required: true,
+						min: 3
+					},
 					nomeAluno: { 
 						required: true,
 						maxlength: 150,
@@ -25,25 +29,18 @@ $(document).ready(function(){
 						maxlength: 250,
 						minlength: 10
 					},
-					rmAluno: {
-						required: true,
-						min: 3
-
-					},
 					moduloAluno: {
 						required: true,
-						minlength: 1
+						maxlength: 3					
 					},
 					periodoAluno: {
-						required: true,
-						maxlength: 15
+						required: true					
 					},
 					cursoAluno: {
-						required: true,
-						maxlength: 50
+						required: true						
 					},
 					telefoneAluno: {
-						required: true,						
+						required: true					
 					}						
 				},												
 			})
