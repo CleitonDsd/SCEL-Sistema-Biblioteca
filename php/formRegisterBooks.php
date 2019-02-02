@@ -36,6 +36,10 @@
 	<!-- <>Sweet Alert - to alert <>'-->
 	<script type="text/javascript" src="../js/sweetalert2.all.js"></script>
 
+	<!-- <>Script para pegar os dados dos alunos nos inputs e fazer pesquisa sem refresh'<> -->
+	<!-- <>Script to get students' data in inputs and do research without refresh'<> -->
+	<script type="text/javascript" src="../js/script_GetDataBooks.js"></script>
+
 	<!-- <>Estilo em Css para arrumar a posição das mensagens obrigátorias, da validação de campos (script_validate.js)<>' -->
 	<!-- <>Style in Css to sort the position of mandatory messages, fields validation (script_validate.js)<>' -->
 	<style> #nomeLivro-error, #autorLivro-error, #edicaoLivro-error, #ibsnLivro-error, #publicacaoLivro-error, #categoriaLivro-error, #estoqueLivro-error {
@@ -44,36 +48,36 @@
 		right: 260px;
 		font-size: 15px;
 		text-align: center;			
-	}
-	#editoraLivro-error{
-		position: absolute;
-		color: red;
+		}
+		#editoraLivro-error{
+			position: absolute;
+			color: red;
+			text-align: center;
+			width: 350px;
+			right: 165px;
+		}
+	</style>
+
+	<!-- <>Estilo em Css para editar os botões de confirmação do Sweet Alert2<>' -->
+	<!-- <>Style in Css to edit the confirmation buttons of the Sweet Alert2<>' -->
+	<style type="text/css">
+
+	/*<>Para arrumar a largura dos botões<>'*/
+	/*<>To adjust the width of the buttons<>'*/
+	.swal2-cancel, .swal2-confirm{
+		position: relative;
+		top: 0px;
 		text-align: center;
-		width: 350px;
-		right: 165px;
+		width: 150px;
+		height: 50px;
 	}
-</style>
-
-<!-- <>Estilo em Css para editar os botões de confirmação do Sweet Alert2<>' -->
-<!-- <>Style in Css to edit the confirmation buttons of the Sweet Alert2<>' -->
-<style type="text/css">
-
-/*<>Para arrumar a largura dos botões<>'*/
-/*<>To adjust the width of the buttons<>'*/
-.swal2-cancel, .swal2-confirm{
-	position: relative;
-	top: 0px;
-	text-align: center;
-	width: 150px;
-	height: 50px;
-}
-/*<>Para alinhar os botões do pop-up<>'*/
-/*<>To align the pop-up buttons<>'*/
-.swal2-actions{
-	position: relative;
-	right: 85px;
-}
-</style>
+	/*<>Para alinhar os botões do pop-up<>'*/
+	/*<>To align the pop-up buttons<>'*/
+	.swal2-actions{
+		position: relative;
+		right: 85px;
+	}
+	</style>
 </head>
 <body>
 	<!-- Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter) -->

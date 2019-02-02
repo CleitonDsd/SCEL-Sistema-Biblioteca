@@ -245,7 +245,7 @@
 					<div class="botoes" id="botoesUsuario" >
 						<input type="reset" name="voltar" value="Limpar">
 						<input type="submit" id="btnCad" name="cadastrar" value="Cadastrar" onclick=" verificaCampo3()">					
-						<button id="botoesUsuario"><a href="">Voltar</a></button>							
+						<button  id="btnVoltar" onclick="desejaVoltar()">Voltar</button>													
 					</div>										
 				</form> 					
 			</fieldset>

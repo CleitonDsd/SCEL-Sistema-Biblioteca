@@ -20,16 +20,16 @@
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script> 
 	<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
 	
-	<script type="text/javascript" src="../js/jquery.mask.min.js"></script>
+	<!-- <>Script para mascáras dos inputs, validações... E mensagens em portugues'<>	 -->
 	<script type="text/javascript" src="../js/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="../js/additional-methods.min.js"></script>
 	<script type="text/javascript" src="../js/messages_pt_BR.js"></script>
+	<script type="text/javascript" src="../js/jquery.mask.min.js"></script>
 	
 
 	<!-- <>scripts de validação, confirmação de cadastro, máscara de campos, janela de confirmação<>' -->
 	<!-- <>validation scripts, registration confirmation, fields mask, window confirmation<>' -->
-	<script type="text/javascript" src="../js/script_validate.js"></script>
-	<script type="text/javascript" src="../js/script_confirmRegister.js"></script>
+	<script type="text/javascript" src="../js/script_validate.js"></script>	
 	<script type="text/javascript" src="../js/script_maskField.js"></script>
 	<script type="text/javascript" src="../js/script_functionsToForm.js"></script>
 
@@ -43,42 +43,42 @@
 
 	<!-- <>Estilo em Css para arrumar a posição das mensagens obrigátorias, da validação de campos (script_validate.js)<>' -->
 	<!-- <>Style in Css to sort the position of mandatory messages, fields validation (script_validate.js)<>' -->
-	<style> #nomeAluno-error, #rmAluno-error, #moduloAluno-error, #periodoAluno-error, #cursoAluno-error, #telefoneAluno-error {
-		position: absolute;
-		color: red;
-		right: 260px;
-		font-size: 15px;
-		text-align: center;			
-	}
-	#emailAluno-error{
-		position: absolute;
-		color: red;
+	<style>  #rmAluno-error, #moduloAluno-error, #periodoAluno-error, #cursoAluno-error, #telefoneAluno-error,#nomeAluno-error, #emailAluno-error {
+		/*	position: absolute;
+			color: red;
+			right: 260px;
+			
+			text-align: center;	*/
+			font-size: 12px;
+			position: absolute;
+			color: red;
+			text-align: center;
+			width: 450px;			
+			right: 205px;			
+		}
+
+	</style>
+
+	<!-- <>Estilo em Css para editar os botões de confirmação do Sweet Alert2<>' -->
+	<!-- <>Style in Css to edit the confirmation buttons of the Sweet Alert2<>' -->
+	<style type="text/css">
+
+	/*<>Para arrumar a largura dos botões<>'*/
+	/*<>To adjust the width of the buttons<>'*/
+	.swal2-cancel, .swal2-confirm{
+		position: relative;
+		top: 0px;
 		text-align: center;
-		width: 350px;
-		right: 165px;
+		width: 150px;
+		height: 50px;
 	}
-</style>
-
-<!-- <>Estilo em Css para editar os botões de confirmação do Sweet Alert2<>' -->
-<!-- <>Style in Css to edit the confirmation buttons of the Sweet Alert2<>' -->
-<style type="text/css">
-
-/*<>Para arrumar a largura dos botões<>'*/
-/*<>To adjust the width of the buttons<>'*/
-.swal2-cancel, .swal2-confirm{
-	position: relative;
-	top: 0px;
-	text-align: center;
-	width: 150px;
-	height: 50px;
-}
-/*<>Para alinhar os botões do pop-up<>'*/
-/*<>To align the pop-up buttons<>'*/
-.swal2-actions{
-	position: relative;
-	right: 85px;
-}
-</style>
+	/*<>Para alinhar os botões do pop-up<>'*/
+	/*<>To align the pop-up buttons<>'*/
+	.swal2-actions{
+		position: relative;
+		right: 85px;
+	}
+	</style>
 
 </head>
 <body>
@@ -218,8 +218,8 @@
 
 					<div class="row">
 						<p>Modulo:</p>
-						<select name="moduloAluno" >	
-							<option>selecione...</option>
+						<select name="moduloAluno">	
+							<option value="">selecione...</option>
 							<option>1°</option>
 							<option>2°</option>
 							<option>3°</option>
@@ -232,7 +232,7 @@
 					<div class="row">
 						<p>Periodo:</p>
 						<select name="periodoAluno" >	
-							<option>selecione...</option>
+							<option value="">selecione...</option>
 							<option>ETIM</option>
 							<option>Manhã</option>
 							<option>Noturno</option>								
@@ -242,8 +242,8 @@
 					<div class="row">
 						<p>Curso:</p>
 						<!-- <input  type="text"  name="cursoAluno"  size="20"  maxlength="45"> -->
-						<select name="cursoAluno" >	
-							<option>selecione...</option>
+						<select name="cursoAluno">	
+							<option value="">selecione...</option>
 							<option>Administração </option>
 							<option>Cozinha</option>
 							<option>Nutrição</option>
