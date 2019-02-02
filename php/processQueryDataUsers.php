@@ -32,10 +32,12 @@ if(!empty($emailUsuario)){
         // <>E atribuimos o resultado para linha_aluno(row_aluno)'<>
         $row_aluno = $resultado->fetch(PDO::FETCH_ASSOC);
         // <>Aqui imprimo o valor correspondente ao do Banco de Dados<>'
-        $array_valores['nomeUsuario'] = $row_aluno['nomeUsuario'];         
-        $array_valores['emailUsuario'] = $row_aluno['emailUsuario'];         
-        $array_valores['loginUsuario'] = $row_aluno['loginUsuario'];         
-        $array_valores['senhaUsuario'] = $row_aluno['senhaUsuario'];         
+        $array_valores['idlLogin']           = $row_aluno['idlLogin'];         
+        $array_valores['nomeUsuario']       = $row_aluno['nomeUsuario'];         
+        $array_valores['emailUsuario']      = $row_aluno['emailUsuario'];         
+        $array_valores['loginUsuario']      = $row_aluno['loginUsuario'];         
+        $array_valores['funcaoUsuario']      = $row_aluno['funcaoUsuario']; 
+        $array_valores['senhaUsuario']      = $row_aluno['senhaUsuario'];         
         $array_valores['observacaoUsuario'] = $row_aluno['observacaoUsuario'];         
 
     }else{

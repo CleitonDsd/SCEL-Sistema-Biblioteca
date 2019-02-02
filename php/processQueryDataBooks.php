@@ -32,7 +32,8 @@ if(!empty($nomeLivro)){
         // <>E atribuimos o resultado para linha_aluno(row_aluno)'<>
         $row_aluno = $resultado->fetch(PDO::FETCH_ASSOC);
         // <>Aqui imprimo o valor correspondente ao do Banco de Dados<>'
-        $array_valores['nomeLivro']         = $row_aluno['nomeLivro'];         
+        $array_valores['idlivro']           = $row_aluno['idlivro'];         
+        $array_valores['nomeLivro']         = $row_aluno['nomeLivro'];
         $array_valores['autorLivro']        = $row_aluno['autorLivro'];         
         $array_valores['editoraLivro']      = $row_aluno['editoraLivro'];         
         $array_valores['edicaoLivro']       = $row_aluno['edicaoLivro'];         
