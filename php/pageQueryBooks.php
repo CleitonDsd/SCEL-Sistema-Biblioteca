@@ -5,7 +5,9 @@
 	<meta charset="utf-8">
 	<link rel="shortcut icon" href="../images/favicon.ico" >
 	<link rel="stylesheet" type="text/css" href="../css/styleDefault.css">
-	<link rel="stylesheet" type="text/javascript" href="../js/menuDropDown.js">
+	
+	<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../js/script_GetDataBooks.js"></script>
 </head>
 <body>
 	<!-- Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter) -->
@@ -103,28 +105,29 @@
 			<legend>
 				<div class="Busca">
 					<form class="pesquisa">
-						<input type="search" placeholder="Pesquisar..." class="pesquisar">
+						<input type="search" name="nomeLivro" placeholder="Pesquisar..." class="pesquisar">
 					</form>
 				</div>	
 			</legend>					
 			<h3>Consulta de Livros</h3>
 			<div class="itensForm">
 				<div class="fotoCadastro">
-					<img src="../images/aluno.png">
+					<img src="../images/livros.png">
 					<a href=""><input type="file" name=""></a>
 				</div>					
 				<form class="formulario" method="post" action="">							
 					<p>Livro:</p>
-					<input type="text" name="nome" size="35" placeholder="Nome do Livro" maxlength="100">
+					<input type="text" name="nomeLivro" size="35" placeholder="Nome do Livro">
 
 					<p>Autor:</p>
-					<input type="email" name="email" size="35" placeholder="Nome(s) do(s) Autor(es)" maxlength="100">
+					<input type="email" name="autorLivro" size="35" placeholder="Nome(s) do(s) Autor(es)">
 
 					<p>Editora:</p>
-					<input type="text" name="text" size="35" placeholder="Nome(s) da(s) editora(s)" maxlength="10">
+					<input type="text" name="editoraLivro" size="35" placeholder="Nome(s) da(s) editora(s)">
 
 					<p>Edição</p>
-					<select name="modulo">											 		
+					<select name="edicaoLivro">	
+						<option value="">selecione...</option>									 		
 						<option value="">1° Edição</option>
 						<option value="">2° Edição</option>
 						<option value="">3° Edição</option>
@@ -158,30 +161,32 @@
 						<option value="">30° Edição</option>								
 					</select>																
 					<p>Categ.:</p>
-					<select name="modulo">											 		
-						<option value="">Tecnologia</option>
-						<option value="">Medicina</option>
-						<option value="">Gastronomia</option>
-						<option value="">Nutrição</option>
-						<option value="">Seg. Trabalho</option>
-						<option value="">Artes</option>
-						<option value="">Biografias</option>
-						<option value="">Contos</option>
-						<option value="">L. Brasileira</option>
-						<option value="">L. Estrangeira</option>
-						<option value="">Ficção</option>
-						<option value="">Romance</option>
-						<option value="">Religião</option>
-						<option value="">Outro Assunto</option>								
+					<select name="categoriaLivro">		
+						<option value="categoriaLivro">selecione...</option>
+						<option value="categoriaLivro">Tecnologia</option>
+						<option value="categoriaLivro">Medicina</option>
+						<option value="categoriaLivro">Gastronomia</option>
+						<option value="categoriaLivro">Nutrição</option>
+						<option value="categoriaLivro">Seg. Trabalho</option>
+						<option value="categoriaLivro">Artes</option>
+						<option value="categoriaLivro">Biografias</option>
+						<option value="categoriaLivro">Contos</option>
+						<option value="categoriaLivro">L. Brasileira</option>
+						<option value="categoriaLivro">L. Estrangeira</option>
+						<option value="categoriaLivro">Ficção</option>
+						<option value="categoriaLivro">Romance</option>
+						<option value="categoriaLivro">Religião</option>
+						<option value="categoriaLivro">Outro Assunto</option>								
 					</select>																			
 					<p>ISBN:</p>
-					<input type="text" name="" size="10" maxlength="45">
+					<input type="text" name="isbnLivro" size="15">
 
-					<p>Data:</p>
-					<input type="date" name="" size="10">
+					<p>Public.:</p>
+					<input type="date" name="publicacaoLivro" size="10">
 
 					<p  class="">Estoque:</p>
-					<select id ="estoque">
+					<select name="estoqueLivro" id ="estoque">
+						<option value="">selecione...</option>
 						<option value="">1</option>
 						<option value="">2</option>
 						<option value="">3</option>
@@ -217,8 +222,7 @@
 					</select>		
 					<div class="botoes" id="botoesConsultaEmp">
 						<button type="voltar" ><a href="">Voltar</a></button>	
-						<input type="reset" name="limpar" value="Limpar">
-						<input type="submit" name="cadastrar" value="Cadastrar">						
+						<input type="reset" name="limpar" value="Limpar">						
 						<button type="editar"><a href="">Editar</a></button>
 					</div>								
 				</form> 					
@@ -264,9 +268,3 @@
 	</div>
 </body>
 </html>
-
-<?php
-
-
-
-?>

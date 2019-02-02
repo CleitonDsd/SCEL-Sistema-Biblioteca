@@ -317,7 +317,6 @@
 	// <>Arquivo de conexão com o banco de dados<>'
 	// <>File to connect in database<>'
 require 'config.php';
-
 if (isset ($_POST['nomeAluno']) && !empty($_POST['nomeAluno'])) {
 
 	/*aqui eu pego os dados que o usuario digitou la no meu formulario*/  

@@ -268,7 +268,7 @@ border-radius: 4px;
 }
 /*Form de Consulta*/
 #formConsulta{
-	height: 650px;
+	height: 680px;
 }
 #formEmprestimo{
 	height: 730px;
@@ -513,10 +513,12 @@ border-radius: 4px;
 /*------------ BOTÕES DE CONSULTA ----------*/
 #botoesConsulta, #botoesConsultaEmp {
 	position: relative;
-	right: 40px;
 }
 #botoesConsultaEmp{
-	top: -30px;
+	top: -15px;
+}
+#botoesConsultaEmpL button, #botoesConsultaEmpL input{
+	top: -15px;
 }
 
 /*------------ */

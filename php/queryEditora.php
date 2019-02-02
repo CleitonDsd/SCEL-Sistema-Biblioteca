@@ -1,6 +1,6 @@
 <?php
 // <>Para incluir uma vez a conexão com o Banco de Dados<>'
-include_once './conecta.php';
+include_once './conecta2.php';
 
 // <>Recuperar o Rm que enviamos, para a variável nomeLivro<>'
 // <> Filtra o Input - Informamos qual metódo 'Input_Get' da VAR nomeLivro - '<>

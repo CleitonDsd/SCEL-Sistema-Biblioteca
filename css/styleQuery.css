@@ -106,7 +106,7 @@ border-radius: 4px;
 	top: 0;
 	/*left:100%;*/
 }
-#menuTopoSair{
+#menuTopoSair2{
 	position: relative;
 	margin: auto;
 	top: 0px;
@@ -114,7 +114,7 @@ border-radius: 4px;
 	height: 20px;
 
 }
-#menuTopoSair:hover{
+#menuTopoSair2:hover{
 	background-color: #8B1A1A;
 	color: #F0FFFF;
 

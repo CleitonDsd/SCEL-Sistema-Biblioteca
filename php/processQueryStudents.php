@@ -38,14 +38,14 @@
 	<body> <?php
 		if(mysqli_affected_rows($conn) != 0){
 			echo "
-				<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/php/Biblioteca_Git/php/pageQueryStudents.php'>
+				<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/php/Biblioteca_Git/php/tableQueryStudents.php'>
 				<script type=\"text/javascript\"> 
 					alert(\"Dados do Aluno Alterado com Sucesso.\");
 				</script>
 			";	
 		}else{
 			echo "
-				<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/php/Biblioteca_Git/php/pageQueryStudents.php'>
+				<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/php/Biblioteca_Git/php/tableQueryStudents.php'>
 				<script type=\"text/javascript\">
 					alert(\"O Aluno não teve os Dados Alterado.\");
 				</script>
