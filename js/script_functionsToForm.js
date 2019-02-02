@@ -70,6 +70,23 @@ function desejaVoltar(){
 	})
 
 }
+function desejaVoltar2(){
+	swal({
+		title: 'Você  tem certeza que deseja Voltar?',
+		text: 'Dados poderão ser perdidos',
+		type: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#3085d6',
+		cancelButtonColor: '#d33',
+		confirmButtonText: 'Continuar',
+		cancelButtonText: 'Cancelar'
+	}).then((result) => {
+		if (result.value) {
+			window.location = '../html/menuRegisters.html';			
+		}
+	})
+
+}
 
 // Função para validar senha no Formulário de Cadastro de Usuários
 // Function to validate password in the form Register Users
