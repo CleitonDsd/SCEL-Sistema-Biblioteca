@@ -1,13 +1,81 @@
+<?php
+include_once("conecta.php");
+
+$result = "SELECT * FROM livros ";
+$resultado = mysqli_query($conn, $result);
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Consulta de Livros - Biblioteca</title>
+
 	<meta charset="utf-8">
+
 	<link rel="shortcut icon" href="../images/favicon.ico" >
-	<link rel="stylesheet" type="text/css" href="../css/styleDefault.css">
-	
+	<!-- <>Link do Arquivo padrão de Css para os Menus<>' -->
+	<!-- <>file link to default CSS sheet<>'' -->
+	<link rel="stylesheet" type="text/css" href="../css/styleDefault.css">	
+
+	<!-- <>Link da biblioeteca de temas do Bootstrap, utilizada para confirmar o cadastro<>' -->
+	<!-- <>Bootstrap theme library link, used to confirm registration<>' -->
+	<link href="../css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+
+	<!-- <>Arquivos das bibliotecas utilizadas para os Scripts'<> -->
+	<!-- <>Library Files Used for Scripts'<> -->
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script> 
 	<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+	
+	<!-- <>Script para mascáras dos inputs, validações... E mensagens em portugues'<>	 -->
+	<script type="text/javascript" src="../js/jquery.mask.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="../js/additional-methods.min.js"></script>
+	<script type="text/javascript" src="../js/messages_pt_BR.js"></script>	
+
+	<!-- <>scripts de validação, confirmação de cadastro, máscara de campos, janela de confirmação<>' -->
+	<!-- <>validation scripts, registration confirmation, fields mask, window confirmation<>' -->
+	<script type="text/javascript" src="../js/script_validate.js"></script>	
+	<script type="text/javascript" src="../js/script_maskField.js"></script>
+	<script type="text/javascript" src="../js/script_functionsToForm.js"></script>
+	
+	<!-- <>Script para pegar os dados dos alunos nos inputs e fazer pesquisa sem refresh'<> -->
+	<!-- <>Script to get students' data in inputs and do research without refresh'<> -->
 	<script type="text/javascript" src="../js/script_GetDataBooks.js"></script>
+
+	<!-- <>Sweet Alert - para notificações do site<>' -->
+	<!-- <>Sweet Alert - to alert <>'-->
+	<script type="text/javascript" src="../js/sweetalert2.all.js"></script>
+
+		<!-- <>Estilo em Css para arrumar a posição das mensagens obrigátorias, da validação de campos (script_validate.js)<>' -->
+	<!-- <>Style in Css to sort the position of mandatory messages, fields validation (script_validate.js)<>' -->
+	<style> #nomeLivro-error, #autorLivro-error, #edicaoLivro-error, #ibsnLivro-error, #publicacaoLivro-error, 
+		#categoriaLivro-error, #estoque-error, #editoraLivro-error{
+			font-size: 12px;
+			position: absolute;
+			color: red;
+			text-align: center;
+			width: 450px;			
+			right: 205px;		
+		}	
+	</style>
+	<!-- <>Estilo em Css para editar os botões de confirmação do Sweet Alert2<>' -->
+	<!-- <>Style in Css to edit the confirmation buttons of the Sweet Alert2<>' -->
+	<style type="text/css">
+		/*<>Para arrumar a largura dos botões<>'*/
+		/*<>To adjust the width of the buttons<>'*/
+		.swal2-cancel, .swal2-confirm{
+			position: relative;
+			top: 0px;
+			text-align: center;
+			width: 150px;
+			height: 50px;
+		}
+		/*<>Para alinhar os botões do pop-up<>'*/
+		/*<>To align the pop-up buttons<>'*/
+		.swal2-actions{
+			position: relative;
+			right: 85px;
+		}
+	</style>	
 </head>
 <body>
 	<!-- Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter) -->
@@ -115,12 +183,15 @@
 					<img src="../images/livros.png">
 					<a href=""><input type="file" name=""></a>
 				</div>					
-				<form class="formulario" method="post" action="">							
+				<form class="formulario" id="formularioCadLivro" method="post" action="">							
+					<p>Id:</p>
+					<input type="text" name="idlivro" size="" placeholder="Id não pode ser Alterado">
+
 					<p>Livro:</p>
 					<input type="text" name="nomeLivro" size="35" placeholder="Nome do Livro">
 
 					<p>Autor:</p>
-					<input type="email" name="autorLivro" size="35" placeholder="Nome(s) do(s) Autor(es)">
+					<input type="text" name="autorLivro" size="35" placeholder="Nome(s) do(s) Autor(es)">
 
 					<p>Editora:</p>
 					<input type="text" name="editoraLivro" size="35" placeholder="Nome(s) da(s) editora(s)">
@@ -128,103 +199,106 @@
 					<p>Edição</p>
 					<select name="edicaoLivro">	
 						<option value="">selecione...</option>									 		
-						<option value="">1° Edição</option>
-						<option value="">2° Edição</option>
-						<option value="">3° Edição</option>
-						<option value="">4° Edição</option>
-						<option value="">5° Edição</option>
-						<option value="">6° Edição</option>
-						<option value="">7° Edição</option>
-						<option value="">8° Edição</option>
-						<option value="">9° Edição</option>
-						<option value="">10° Edição</option>
-						<option value="">11° Edição</option>
-						<option value="">12° Edição</option>
-						<option value="">12° Edição</option>
-						<option value="">13° Edição</option>
-						<option value="">14° Edição</option>
-						<option value="">15° Edição</option>
-						<option value="">16° Edição</option>
-						<option value="">17° Edição</option>
-						<option value="">18° Edição</option>
-						<option value="">19° Edição</option>
-						<option value="">20° Edição</option>
-						<option value="">21° Edição</option>
-						<option value="">22° Edição</option>
-						<option value="">23° Edição</option>
-						<option value="">24° Edição</option>
-						<option value="">25° Edição</option>
-						<option value="">26° Edição</option>
-						<option value="">27° Edição</option>
-						<option value="">28° Edição</option>
-						<option value="">29° Edição</option>
-						<option value="">30° Edição</option>								
+						<option>1° Edição</option>
+						<option>2° Edição</option>
+						<option>3° Edição</option>
+						<option>4° Edição</option>
+						<option>5° Edição</option>
+						<option>6° Edição</option>
+						<option>7° Edição</option>
+						<option>8° Edição</option>
+						<option>9° Edição</option>
+						<option>10° Edição</option>
+						<option>11° Edição</option>
+						<option>12° Edição</option>
+						<option>12° Edição</option>
+						<option>13° Edição</option>
+						<option>14° Edição</option>
+						<option>15° Edição</option>
+						<option>16° Edição</option>
+						<option>17° Edição</option>
+						<option>18° Edição</option>
+						<option>19° Edição</option>
+						<option>20° Edição</option>
+						<option>21° Edição</option>
+						<option>22° Edição</option>
+						<option>23° Edição</option>
+						<option>24° Edição</option>
+						<option>25° Edição</option>
+						<option>26° Edição</option>
+						<option>27° Edição</option>
+						<option>28° Edição</option>
+						<option>29° Edição</option>
+						<option>30° Edição</option>								
+						<option>acima da 30° Edição</option>
 					</select>																
 					<p>Categ.:</p>
 					<select name="categoriaLivro">		
-						<option value="categoriaLivro">selecione...</option>
-						<option value="categoriaLivro">Tecnologia</option>
-						<option value="categoriaLivro">Medicina</option>
-						<option value="categoriaLivro">Gastronomia</option>
-						<option value="categoriaLivro">Nutrição</option>
-						<option value="categoriaLivro">Seg. Trabalho</option>
-						<option value="categoriaLivro">Artes</option>
-						<option value="categoriaLivro">Biografias</option>
-						<option value="categoriaLivro">Contos</option>
-						<option value="categoriaLivro">L. Brasileira</option>
-						<option value="categoriaLivro">L. Estrangeira</option>
-						<option value="categoriaLivro">Ficção</option>
-						<option value="categoriaLivro">Romance</option>
-						<option value="categoriaLivro">Religião</option>
-						<option value="categoriaLivro">Outro Assunto</option>								
+						<option value="">selecione...</option>
+						<option>Tecnologia</option>
+						<option>Medicina</option>
+						<option>Gastronomia</option>
+						<option>Nutrição</option>
+						<option>Seg. Trabalho</option>
+						<option>Artes</option>
+						<option>Biografias</option>
+						<option>Contos</option>
+						<option>L. Brasileira</option>
+						<option>L. Estrangeira</option>
+						<option>Ficção</option>
+						<option>Romance</option>
+						<option>Religião</option>
+						<option>Outro Assunto</option>								
 					</select>																			
 					<p>ISBN:</p>
 					<input type="text" name="isbnLivro" size="15">
 
 					<p>Public.:</p>
-					<input type="date" name="publicacaoLivro" size="10">
+					<input type="text" name="publicacaoLivro" placeholder="AAAA-MM-DD" size="10">
 
 					<p  class="">Estoque:</p>
 					<select name="estoqueLivro" id ="estoque">
 						<option value="">selecione...</option>
-						<option value="">1</option>
-						<option value="">2</option>
-						<option value="">3</option>
-						<option value="">4</option>
-						<option value="">5</option>
-						<option value="">6</option>
-						<option value="">7</option>
-						<option value="">8</option>
-						<option value="">9</option>
-						<option value="">10</option>
-						<option value="">11</option>
-						<option value="">12</option>
-						<option value="">12</option>
-						<option value="">13</option>
-						<option value="">14</option>
-						<option value="">15</option>
-						<option value="">16</option>
-						<option value="">17</option>
-						<option value="">18</option>
-						<option value="">19</option>
-						<option value="">20</option>
-						<option value="">21</option>
-						<option value="">22</option>
-						<option value="">23</option>
-						<option value="">24</option>
-						<option value="">25</option>
-						<option value="">26</option>
-						<option value="">27</option>
-						<option value="">28</option>
-						<option value="">29</option>
-						<option value="">30</option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+						<option>10</option>
+						<option>11</option>
+						<option>12</option>
+						<option>12</option>
+						<option>13</option>
+						<option>14</option>
+						<option>15</option>
+						<option>16</option>
+						<option>17</option>
+						<option>18</option>
+						<option>19</option>
+						<option>20</option>
+						<option>21</option>
+						<option>22</option>
+						<option>23</option>
+						<option>24</option>
+						<option>25</option>
+						<option>26</option>
+						<option>27</option>
+						<option>28</option>
+						<option>29</option>
+						<option>30</option>
 						<option value="">+ de 30</option>
 					</select>		
-					<div class="botoes" id="botoesConsultaEmp">
-						<button type="voltar" ><a href="">Voltar</a></button>	
-						<input type="reset" name="limpar" value="Limpar">						
-						<button type="editar"><a href="">Editar</a></button>
-					</div>								
+					<div class="botoes" id="botoesConsultaEmp" >
+
+					<input type="reset" name="voltar" value="Limpar">
+
+					<input type="submit" id="btnCad" name="cadastrar" value="Editar" onclick=" verificaCampo2()">					
+					<button  id="btnVoltar" onclick="desejaVoltar()">Voltar</button>											
+				</div>									
 				</form> 					
 			</fieldset>
 		</div>
@@ -268,3 +342,45 @@
 	</div>
 </body>
 </html>
+<?php 
+
+include("conecta.php");
+
+// if (empty(($_POST['emailAluno']))){
+
+// 	echo "<script>swal('Ops...','Verifique se os campos estão preenchidos','warning')</script>";
+// 	die();
+// }
+
+if (isset ($_POST['nomeLivro']) && !empty($_POST['nomeLivro'])) {
+
+	$id  	 	= mysqli_real_escape_string($conn, $_POST['idlivro']);
+	$nome   	= mysqli_real_escape_string($conn, $_POST['nomeLivro']);
+	$autor 		= mysqli_real_escape_string($conn, $_POST['autorLivro']);
+	$editora 	= mysqli_real_escape_string($conn, $_POST['editoraLivro']);
+	$edicao  	= mysqli_real_escape_string($conn, $_POST['edicaoLivro']);
+	$isbn  		= mysqli_real_escape_string($conn, $_POST['isbnLivro']);
+	$publicacao	= mysqli_real_escape_string($conn, $_POST['publicacaoLivro']);
+	$categoria 	= mysqli_real_escape_string($conn, $_POST['categoriaLivro']);
+	$estoque 	= mysqli_real_escape_string($conn, $_POST['estoqueLivro']);
+
+	$result = "UPDATE livros SET
+
+	nomeLivro	 	= '$nome',
+	autorLivro 		= '$autor',
+	editoraLivro 	= '$editora',
+	edicaoLivro 	= '$edicao',
+	isbnLivro 		= '$isbn',
+	publicacaoLivro	= '$publicacao',
+	categoriaLivro	= '$categoria',
+	estoqueLivro	= '$estoque'
+
+	WHERE idlivro 	= '$id'";
+	
+	$resultado = mysqli_query($conn, $result);	
+
+	echo "<script> window.location = '../php/pageQueryUsers.php</script>";
+
+	echo "<script>swal('Boa!', 'Alterado com Sucesso!', 'success');</script>";	
+}
+?>

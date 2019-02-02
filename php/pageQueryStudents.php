@@ -8,14 +8,81 @@ $resultado_alunos = mysqli_query($conn, $result_alunos);
 <html>
 <head>
 	<title>Consulta de Alunos - Biblioteca</title>
+
 	<meta charset="utf-8">
+
 	<link rel="shortcut icon" href="../images/favicon.ico" >
-	<link rel="stylesheet" type="text/css" href="../css/styleDefault.css">
-	
+	<!-- <>Link do Arquivo padrão de Css para os Menus<>' -->
+	<!-- <>file link to default CSS sheet<>'' -->
+	<link rel="stylesheet" type="text/css" href="../css/styleDefault.css">	
+
+	<!-- <>Link da biblioeteca de temas do Bootstrap, utilizada para confirmar o cadastro<>' -->
+	<!-- <>Bootstrap theme library link, used to confirm registration<>' -->
+	<link href="../css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+
+	<!-- <>Arquivos das bibliotecas utilizadas para os Scripts'<> -->
+	<!-- <>Library Files Used for Scripts'<> -->
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script> 
 	<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+	
+	<!-- <>Script para mascáras dos inputs, validações... E mensagens em portugues'<>	 -->
+	<script type="text/javascript" src="../js/jquery.mask.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="../js/additional-methods.min.js"></script>
+	<script type="text/javascript" src="../js/messages_pt_BR.js"></script>	
+
+	<!-- <>scripts de validação, confirmação de cadastro, máscara de campos, janela de confirmação<>' -->
+	<!-- <>validation scripts, registration confirmation, fields mask, window confirmation<>' -->
+	<script type="text/javascript" src="../js/script_validate.js"></script>	
+	<script type="text/javascript" src="../js/script_maskField.js"></script>
+	<script type="text/javascript" src="../js/script_functionsToForm.js"></script>
+	
+	<!-- <>Script para pegar os dados dos alunos nos inputs e fazer pesquisa sem refresh'<> -->
+	<!-- <>Script to get students' data in inputs and do research without refresh'<> -->
 	<script type="text/javascript" src="../js/script_GetDataStudents.js"></script>
+
+	<!-- <>Sweet Alert - para notificações do site<>' -->
+	<!-- <>Sweet Alert - to alert <>'-->
 	<script type="text/javascript" src="../js/sweetalert2.all.js"></script>
 
+	<!-- <>Estilo em Css para arrumar a posição das mensagens obrigátorias, da validação de campos (script_validate.js)<>' -->
+	<!-- <>Style in Css to sort the position of mandatory messages, fields validation (script_validate.js)<>' -->
+	<style>  #rmAluno-error, #moduloAluno-error, #periodoAluno-error, #cursoAluno-error, #telefoneAluno-error,#nomeAluno-error, #emailAluno-error {
+		/*	position: absolute;
+			color: red;
+			right: 260px;
+			
+			text-align: center;	*/
+			font-size: 12px;
+			position: absolute;
+			color: red;
+			text-align: center;
+			width: 450px;			
+			right: 205px;			
+		}
+
+	</style>
+
+	<!-- <>Estilo em Css para editar os botões de confirmação do Sweet Alert2<>' -->
+	<!-- <>Style in Css to edit the confirmation buttons of the Sweet Alert2<>' -->
+	<style type="text/css">
+
+		/*<>Para arrumar a largura dos botões<>'*/
+		/*<>To adjust the width of the buttons<>'*/
+		.swal2-cancel, .swal2-confirm{
+			position: relative;
+			top: 0px;
+			text-align: center;
+			width: 150px;
+			height: 50px;
+		}
+		/*<>Para alinhar os botões do pop-up<>'*/
+		/*<>To align the pop-up buttons<>'*/
+		.swal2-actions{
+			position: relative;
+			right: 85px;
+		}
+	</style>
 </head>
 <body>
 	<!-- Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter) -->
@@ -123,7 +190,7 @@ $resultado_alunos = mysqli_query($conn, $result_alunos);
 					<img src="../images/aluno.png">
 					<a href=""><input type="file" name=""></a>
 				</div>					
-				<form class="formulario" method="post" action="">							
+				<form class="formulario" method="post" id="formCadastro" action="">							
 					<div class="row">					
 						<p>ID:</p>
 						<input type="number" name="idAluno" placeholder="Id não pode ser Alterado">
@@ -145,41 +212,41 @@ $resultado_alunos = mysqli_query($conn, $result_alunos);
 
 					<div class="row">
 						<p>Modulo:</p>
-						<input  type="text"  name="moduloAluno"  size="20"  maxlength="45">
-						<!-- <select name="moduloAluno" >	
-							<option>selecione...</option>
+						<!-- <input  type="text"  name="moduloAluno"  size="20"  maxlength="45"> -->
+						<select name="moduloAluno">
+							<option value="">selecione...</option>
 							<option>1°</option>
 							<option>2°</option>
 							<option>3°</option>
 							<option>4°</option>
 							<option>5°</option>
 							<option>6°</option>								
-						</select>		 -->					
+						</select>		 				
 					</div>
 
 					<div class="row">
 						<p>Periodo:</p>
-						<input  type="text"  name="periodoAluno"  size="20"  maxlength="45">							
-						<!-- <select name="periodoAluno" >	
-							<option>selecione...</option>
+						<!-- <input  type="text"  name="periodoAluno"  size="20"  maxlength="45">					 -->		
+						<select name="periodoAluno" >	
+							<option value="">selecione...</option>
 							<option>ETIM</option>
 							<option>Manhã</option>
 							<option>Noturno</option>								
-						</select>				 -->
+						</select>				 
 					</div>
 
 					<div class="row">
 						<p>Curso:</p>
-						<input  type="text"  name="cursoAluno"  size="20"  maxlength="45">
-						<!-- <select name="cursoAluno" >	
-							<option>selecione...</option>
+						<!-- <input  type="text"  name="cursoAluno"  size="20"  maxlength="45"> -->
+						<select name="cursoAluno" >	
+							<option value="">selecione...</option>
 							<option>Administração </option>
 							<option>Cozinha</option>
 							<option>Nutrição</option>
 							<option>Enfermagem</option>
 							<option>Informática</option>
 							<option>Segurança do Trabalho</option>							
-						</select>		 -->
+						</select>		 
 
 					</div>
 
@@ -187,10 +254,12 @@ $resultado_alunos = mysqli_query($conn, $result_alunos);
 						<p>Telefone:</p>
 						<input type="text"  name="telefoneAluno"  id="telefoneAluno"   size="15"  placeholder="ex.: (xx)x xxxx-xxxx">							
 					</div>
-					<div class="botoesCon botoes" id="botoesConsulta">
-						<button type="voltar" ><a href="">Voltar</a></button>	
+					<div class="botoes" id="botoesConsulta">
+
 						<input type="reset" name="limpar" value="Limpar">											
-						<button type="submit"><a href="">Editar</a></button>
+						<input type="submit" name="cadastrar" value="Editar" onclick="verificaCampo()">
+
+						<button  id="btnVoltar" onclick="desejaVoltar()">Voltar</button>														
 					</div>							
 				</form> 					
 			</fieldset>
@@ -238,35 +307,41 @@ $resultado_alunos = mysqli_query($conn, $result_alunos);
 
 <?php 
 
-	include("conecta.php");
-	if (isset ($_POST['emailAluno']) && !empty($_POST['emailAluno'])) {
+include("conecta.php");
 
-		
-		$id  	 	= mysqli_real_escape_string($conn, $_POST['idAluno']);
-		$rm   		= mysqli_real_escape_string($conn, $_POST['rmAluno']);
-		$nome 		= mysqli_real_escape_string($conn, $_POST['nomeAluno']);
-		$email 		= mysqli_real_escape_string($conn, $_POST['emailAluno']);
-		$modulo  	= mysqli_real_escape_string($conn, $_POST['moduloAluno']);
-		$periodo  	= mysqli_real_escape_string($conn, $_POST['periodoAluno']);
-		$curso 	  	= mysqli_real_escape_string($conn, $_POST['cursoAluno']);
-		$telefone 	= mysqli_real_escape_string($conn, $_POST['telefoneAluno']);
+// if (empty(($_POST['emailAluno']))){
 
-		$result_alunos = "UPDATE alunos SET
+// 	echo "<script>swal('Ops...','Verifique se os campos estão preenchidos','warning')</script>";
+// 	die();
+// }
 
-		  nomeAluno 	= '$nome',
-		  rmAluno	 	= '$rm',
-		  emailAluno 	= '$email',
-		  moduloAluno 	= '$modulo',
-		  periodoAluno 	= '$periodo',
-		  cursoAluno 	= '$curso',
-		  telefoneAluno = '$telefone' 
+if (isset ($_POST['emailAluno']) && !empty($_POST['emailAluno'])) {
 
-	 	 WHERE idAluno = '$id'";
+	$id  	 	= mysqli_real_escape_string($conn, $_POST['idAluno']);
+	$rm   		= mysqli_real_escape_string($conn, $_POST['rmAluno']);
+	$nome 		= mysqli_real_escape_string($conn, $_POST['nomeAluno']);
+	$email 		= mysqli_real_escape_string($conn, $_POST['emailAluno']);
+	$modulo  	= mysqli_real_escape_string($conn, $_POST['moduloAluno']);
+	$periodo  	= mysqli_real_escape_string($conn, $_POST['periodoAluno']);
+	$curso 	  	= mysqli_real_escape_string($conn, $_POST['cursoAluno']);
+	$telefone 	= mysqli_real_escape_string($conn, $_POST['telefoneAluno']);
+
+	$result_alunos = "UPDATE alunos SET
+
+	nomeAluno 		= '$nome',
+	rmAluno	 		= '$rm',
+	emailAluno 		= '$email',
+	moduloAluno 	= '$modulo',
+	periodoAluno 	= '$periodo',
+	cursoAluno 		= '$curso',
+	telefoneAluno 	= '$telefone' 
+
+	WHERE idAluno 	= '$id'";
 	
-	  	$resultado_alunos = mysqli_query($conn, $result_alunos);	
+	$resultado_alunos = mysqli_query($conn, $result_alunos);	
 
-	  	echo "<script> window.location = '../php/pageQueryStudents.php</script>";
+	echo "<script> window.location = '../php/pageQueryStudents.php</script>";
 
-		echo "<script>swal('Boa!', 'Alterado com Sucesso!', 'success');</script>";	
-	}
- ?>
+	echo "<script>swal('Boa!', 'Alterado com Sucesso!', 'success');</script>";	
+}
+?>
