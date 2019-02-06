@@ -142,9 +142,26 @@ $resultado = mysqli_query($conn, $result);
 						</ul>
 					</li>
 				</li>
-				<li>
-					<a href="../php/login.php">Sair</a>				
-				</li>		
+				<button id="menuTopoSair"> Sair </button> 			
+				<!-- Script do botão sair  -->
+				<script type="text/javascript">
+					document.getElementById('menuTopoSair').onclick = function(){
+						swal({
+							title: 'Você  tem certeza que deseja Sair?',
+							text: '!!!',
+							type: 'warning',
+							showCancelButton: true,
+							confirmButtonColor: '#3085d6',
+							cancelButtonColor: '#d33',
+							confirmButtonText: 'Continuar',
+							cancelButtonText: 'Cancelar'
+						}).then((result) => {
+							if (result.value) {
+								window.location = '../php/login.php';			
+							}
+						})
+					};
+				</script>			
 			</div>
 		</ul>
 

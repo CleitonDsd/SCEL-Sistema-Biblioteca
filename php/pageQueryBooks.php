@@ -45,37 +45,37 @@ $resultado = mysqli_query($conn, $result);
 	<!-- <>Sweet Alert - to alert <>'-->
 	<script type="text/javascript" src="../js/sweetalert2.all.js"></script>
 
-		<!-- <>Estilo em Css para arrumar a posição das mensagens obrigátorias, da validação de campos (script_validate.js)<>' -->
+	<!-- <>Estilo em Css para arrumar a posição das mensagens obrigátorias, da validação de campos (script_validate.js)<>' -->
 	<!-- <>Style in Css to sort the position of mandatory messages, fields validation (script_validate.js)<>' -->
 	<style> #nomeLivro-error, #autorLivro-error, #edicaoLivro-error, #ibsnLivro-error, #publicacaoLivro-error, 
-		#categoriaLivro-error, #estoque-error, #editoraLivro-error{
-			font-size: 12px;
-			position: absolute;
-			color: red;
-			text-align: center;
-			width: 450px;			
-			right: 205px;		
-		}	
-	</style>
-	<!-- <>Estilo em Css para editar os botões de confirmação do Sweet Alert2<>' -->
-	<!-- <>Style in Css to edit the confirmation buttons of the Sweet Alert2<>' -->
-	<style type="text/css">
-		/*<>Para arrumar a largura dos botões<>'*/
-		/*<>To adjust the width of the buttons<>'*/
-		.swal2-cancel, .swal2-confirm{
-			position: relative;
-			top: 0px;
-			text-align: center;
-			width: 150px;
-			height: 50px;
-		}
-		/*<>Para alinhar os botões do pop-up<>'*/
-		/*<>To align the pop-up buttons<>'*/
-		.swal2-actions{
-			position: relative;
-			right: 85px;
-		}
-	</style>	
+	#categoriaLivro-error, #estoque-error, #editoraLivro-error{
+		font-size: 12px;
+		position: absolute;
+		color: red;
+		text-align: center;
+		width: 450px;			
+		right: 205px;		
+	}	
+</style>
+<!-- <>Estilo em Css para editar os botões de confirmação do Sweet Alert2<>' -->
+<!-- <>Style in Css to edit the confirmation buttons of the Sweet Alert2<>' -->
+<style type="text/css">
+/*<>Para arrumar a largura dos botões<>'*/
+/*<>To adjust the width of the buttons<>'*/
+.swal2-cancel, .swal2-confirm{
+	position: relative;
+	top: 0px;
+	text-align: center;
+	width: 150px;
+	height: 50px;
+}
+/*<>Para alinhar os botões do pop-up<>'*/
+/*<>To align the pop-up buttons<>'*/
+.swal2-actions{
+	position: relative;
+	right: 85px;
+}
+</style>	
 </head>
 <body>
 	<!-- Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter) -->
@@ -132,9 +132,26 @@ $resultado = mysqli_query($conn, $result);
 						</ul>
 					</li>
 				</li>
-				<li>
-					<a href="../php/login.php">Sair</a>				
-				</li>		
+				<button id="menuTopoSair"> Sair </button> 			
+				<!-- Script do botão sair  -->
+				<script type="text/javascript">
+					document.getElementById('menuTopoSair').onclick = function(){
+						swal({
+							title: 'Você  tem certeza que deseja Sair?',
+							text: '!!!',
+							type: 'warning',
+							showCancelButton: true,
+							confirmButtonColor: '#3085d6',
+							cancelButtonColor: '#d33',
+							confirmButtonText: 'Continuar',
+							cancelButtonText: 'Cancelar'
+						}).then((result) => {
+							if (result.value) {
+								window.location = '../php/login.php';			
+							}
+						})
+					};
+				</script>				
 			</div>
 		</ul>
 
@@ -294,11 +311,11 @@ $resultado = mysqli_query($conn, $result);
 					</select>		
 					<div class="botoes" id="botoesConsultaEmp" >
 
-					<input type="reset" name="voltar" value="Limpar">
+						<input type="reset" name="voltar" value="Limpar">
 
-					<input type="submit" id="btnCad" name="cadastrar" value="Editar" onclick=" verificaCampo2()">					
-					<button  id="btnVoltar" onclick="desejaVoltar()">Voltar</button>											
-				</div>									
+						<input type="submit" id="btnCad" name="cadastrar" value="Editar" onclick=" verificaCampo2()">					
+						<button  id="btnVoltar" onclick="desejaVoltar()">Voltar</button>											
+					</div>									
 				</form> 					
 			</fieldset>
 		</div>

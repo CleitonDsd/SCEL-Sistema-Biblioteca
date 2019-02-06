@@ -7,7 +7,7 @@ $resultado_alunos = mysqli_query($conn, $result_alunos);
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<title>Consulta de Alunos - Biblioteca</title>
+	<title>Registro Geral de Alunos - Biblioteca</title>
 	<!-- <>Arquivo Css padrão da página'<> -->
 	<!-- <>Standard file to the page'<> -->
 	<link rel="stylesheet" type="text/css" href="../css/styleQuery.css">
@@ -172,7 +172,7 @@ $resultado_alunos = mysqli_query($conn, $result_alunos);
 								}
 							</style>
 							<button id="btnsConsultaAltera" type="button" class="btn btn-xs btn-danger">
-								<a href="../html/pageInDevelopment.html" target="_blank">
+								<a href="../php/processTableDeleteStudents.php">
 								Apagar</a></button>
 							</td>
 						</tr>
@@ -284,7 +284,7 @@ $resultado_alunos = mysqli_query($conn, $result_alunos);
 					<h4 class="modal-title" id="exampleModalLabel">Aluno</h4>
 				</div>
 				<div class="modal-body">
-					<form method="POST" action="http://localhost/php/Biblioteca_Git/php/processQueryStudents.php" enctype="multipart/form-data">
+					<form method="POST" action="http://localhost/php/Biblioteca_Git/php/processTableQueryStudents.php" enctype="multipart/form-data">
 
 						<div class="form-group">
 							<label for="message-text" class="control-label">RM:</label>
