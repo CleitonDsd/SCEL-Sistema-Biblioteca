@@ -1,7 +1,7 @@
 <?php		
 
 // Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter)'
-// <>Relatório do total de alunos '<>
+// <>Relatório do total de alunos'<>
 
 	include_once("conexao.php");
 

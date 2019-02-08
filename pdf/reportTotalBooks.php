@@ -13,22 +13,25 @@
 	$html .= '<th>Autor</th>';
 	$html .= '<th>Editora</th>';
 	$html .= '<th>Edição</th>';
+	$html .= '<th>Publicação</th>';
 	$html .= '<th>Categoria</th>';
 	$html .= '<th>Estoque</th>';
 	$html .= '</tr>';
 	$html .= '</thead>';
 	$html .= '<tbody>';	
 
-	$result_transacoes = "SELECT * FROM alunos";
+	$result_transacoes = "SELECT * FROM livros";
 	$resultado_trasacoes = mysqli_query($conn, $result_transacoes);	
 	while($row_transacoes = mysqli_fetch_assoc($resultado_trasacoes)){
-		$html .= '<tr><td>'.$row_transacoes['idAluno'] . "</td>";
-		$html .= '<td>'.$row_transacoes['nomeAluno'] . "</td>";
-		$html .= '<td>'.$row_transacoes['rmAluno'] . "</td>";
-		$html .= '<td>'.$row_transacoes['emailAluno'] . "</td>";
-		$html .= '<td>'.$row_transacoes['cursoAluno'] . "</td>";
-		$html .= '<td>'.$row_transacoes['periodoAluno'] . "</td>";	
-		$html .= '<td>'.$row_transacoes['telefoneAluno'] . "</td></tr>";		
+
+		$html .= '<tr><td>'.$row_transacoes['idlivro'] . "</td>";
+		$html .= '<td>'.$row_transacoes['nomeLivro'] . "</td>";
+		$html .= '<td>'.$row_transacoes['autorLivro'] . "</td>";
+		$html .= '<td>'.$row_transacoes['editoraLivro'] . "</td>";
+		$html .= '<td>'.$row_transacoes['edicaoLivro'] . "</td>";
+		$html .= '<td>'.$row_transacoes['publicacaoLivro'] . "</td>";	
+		$html .= '<td>'.$row_transacoes['categoriaLivro'] . "</td>";	
+		$html .= '<td>'.$row_transacoes['estoqueLivro'] . "</td></tr>";		
 	}
 	
 	$html .= '</tbody>';
@@ -57,7 +60,7 @@
 
 	//Exibibir a página
 	$dompdf->stream(
-		"relatorioTotalAlunos_BibliotecaEtecUirapuru.pdf", 
+		"relatorioTotalLivros_BibliotecaEtecUirapuru.pdf", 
 		array(
 			"Attachment" => false //Para realizar o download somente alterar para true
 		)
