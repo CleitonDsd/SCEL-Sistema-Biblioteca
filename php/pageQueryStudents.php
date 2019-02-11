@@ -88,7 +88,7 @@ $resultado_alunos = mysqli_query($conn, $result_alunos);
 	<!-- Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter) -->
 	<div class="topo" style=""> <!-- parte do topo do site, onde ficaram os menus -->
 		<div class="menuu ">
-			<ul class="menu ">
+				<ul class="menu ">
 				<li>
 					<a href="../html/mainMenu.html">Home</a>				
 				</li>
@@ -99,47 +99,40 @@ $resultado_alunos = mysqli_query($conn, $result_alunos);
 					<a href="../html/pageInDevelopment.html">Manual de Uso</a>
 				</li>
 				<li><a href="../html/menuRegisters.html">Cadastros</a>
+					<!--<>Cria o sub menu do sub menu<>`--> 
+					<!-- <>Creates the sub-menus<>` -->
 					<ul class="sub-menu">
-						<!-- cria o sub menu do sub menu--> 
 						<li><a href="../php/formRegisterStudents.php">Alunos</a></li>						
 						<li><a href="../php/formRegisterLoans.php">Empréstimos</a></li>
 						<li><a href="../php/formRegisterBooks.php">Livros</a></li>											
 						<li><a href="../php/formRegisterUsers.php">Usuários</a></li>									
 					</ul>
 				</li>				
-				<li><a href="../html/menuQueries.html">Consultas</a>
-					<!-- cria o menu--> 	
-					<ul class="sub-menu">
-						<!-- cria o sub menu--> 
-						<li><a href="../php/pageQueryStudents.php">Alunos</a></li>						
-						<li><a href="../php/pageQueryLoans.php">Empréstimos</a></li>
-						<li><a href="../php/pageQueryBooks.php">Livros</a></li>											
-						<li><a href="../php/pageQueryUsers.php">Usuários</a></li>		
+				<li><a href="../html/menuQueries.html">Consultas</a>					
+					<ul class="sub-menu">					
+						<li><a href="../php/tableQueryStudents.php">Alunos</a></li>						
+						<li><a href="../php/tableQueryLoans.php">Empréstimos</a></li>
+						<li><a href="../php/tableQueryBooks.php">Livros</a></li>											
+						<li><a href="../php/tableQueryUsers.php">Usuários</a></li>		
 					</ul>
 				</li>	
 				<li><a href="../html/menuReports.html">Relatórios</a>
-					<!-- cria o menu--> 	
 					<ul class="sub-menu">
-						<!-- cria o sub menu--> 
-						<li><a href="../html/pageInDevelopment.html">Alunos</a></li>						
-						<li><a href="../html/pageInDevelopment.html">Empréstimos</a></li>
-						<li><a href="../html/pageInDevelopment.html">Livros</a></li>											
-						<li><a href="../html/pageInDevelopment.html">Usuários</a></li>		
+						<li><a target="_blank" href="../pdf/reportTotalStudents.php">Alunos</a></li>						
+						<li><a target="_blank" href="../pdf/reportTotalLoans.php">Empréstimos</a></li>
+						<li><a target="_blank" href="../pdf/reportTotalBooks.php">Livros</a></li>											
+						<li><a target="_blank" href="../pdf/reportTotalUsers.php">Usuários</a></li>		
 					</ul>
 				</li>				
 				<li>
 					<li><a href="../html/menuAbout.html">Sobre</a>
-						<!-- cria o menu--> 	
 						<ul class="sub-menu">
-							<!-- cria o sub menu--> 
-							<li><a href="../html/aboutLibrary.html">Biblioteca</a></li>						
-							<li><a href="../html/pageInDevelopment.html">Etec</a></li>
+							<li><a href="../html/pageInDevelopment.html">Biblioteca</a></li>													
 							<li><a href="../html/aboutDeveloper.html">Desenvolvedor</a></li>											
-							<li><a href="../html/pageInDevelopment.html">Sistema</a></li>									
 						</ul>
 					</li>
-				</li>
-				<button id="menuTopoSair"> Sair </button> 			
+				</li>				
+				<button id="menuTopoSair"> Sair </button> 									
 				<!-- Script do botão sair  -->
 				<script type="text/javascript">
 					document.getElementById('menuTopoSair').onclick = function(){
@@ -158,10 +151,9 @@ $resultado_alunos = mysqli_query($conn, $result_alunos);
 							}
 						})
 					};
-				</script>		
+				</script>			
 			</div>
 		</ul>
-
 		<div class="ConteudoLogo">
 			<a href="../html/mainMenu.html"><img src="../images/logoEtecForm.png" id="logoEtecForm"></a> <!-- Logo da Etec -->
 			<img src="../images/Login.png" id="fotoUsuario"><br>					
