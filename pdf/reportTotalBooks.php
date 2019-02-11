@@ -20,18 +20,18 @@
 	$html .= '</thead>';
 	$html .= '<tbody>';	
 
-	$result_transacoes = "SELECT * FROM livros";
-	$resultado_trasacoes = mysqli_query($conn, $result_transacoes);	
-	while($row_transacoes = mysqli_fetch_assoc($resultado_trasacoes)){
+	$result = "SELECT * FROM livros";
+	$resultado = mysqli_query($conn, $result);	
+	while($row = mysqli_fetch_assoc($resultado)){
 
-		$html .= '<tr><td>'.$row_transacoes['idlivro'] . "</td>";
-		$html .= '<td>'.$row_transacoes['nomeLivro'] . "</td>";
-		$html .= '<td>'.$row_transacoes['autorLivro'] . "</td>";
-		$html .= '<td>'.$row_transacoes['editoraLivro'] . "</td>";
-		$html .= '<td>'.$row_transacoes['edicaoLivro'] . "</td>";
-		$html .= '<td>'.$row_transacoes['publicacaoLivro'] . "</td>";	
-		$html .= '<td>'.$row_transacoes['categoriaLivro'] . "</td>";	
-		$html .= '<td>'.$row_transacoes['estoqueLivro'] . "</td></tr>";		
+		$html .= '<tr><td>'.$row['idlivro'] . "</td>";
+		$html .= '<td>'.$row['nomeLivro'] . "</td>";
+		$html .= '<td>'.$row['autorLivro'] . "</td>";
+		$html .= '<td>'.$row['editoraLivro'] . "</td>";
+		$html .= '<td>'.$row['edicaoLivro'] . "</td>";
+		$html .= '<td>'.$row['publicacaoLivro'] . "</td>";	
+		$html .= '<td>'.$row['categoriaLivro'] . "</td>";	
+		$html .= '<td>'.$row['estoqueLivro'] . "</td></tr>";		
 	}
 	
 	$html .= '</tbody>';
@@ -49,7 +49,7 @@
 	// Carrega seu HTML
 	$dompdf->load_html('			
 			<h1 style="text-align: center;">Biblioteca Uirapuru - Relatório de Livros</h1>
-			<h3>Total de Alunos:   								</h3>
+			<h3>Total de Livros:  ?=# 								</h3>
 			<p> ' .date_default_timezone_set('America/Sao_Paulo'). date(' d/m/Y - H:i:s'). '</p>		
 			<hr><br>			
 			'. $html .'					
