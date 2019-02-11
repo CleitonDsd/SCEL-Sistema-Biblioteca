@@ -11,7 +11,7 @@
 	<!-- <>file link to default CSS sheet<>'' -->
 	<link rel="stylesheet" type="text/css" href="../css/styleDefault.css">
 	
-	<!-- <>Link da biblioeteca de temas do Bootstrap, utilizada para confirmar o cadastro<>' -->
+	<!-- <> Link da biblioeteca de temas do Bootstrap, utilizada para confirmar o cadastro<>' -->
 	<!-- <>Bootstrap theme library link, used to confirm registration<>' -->
 	<link href="../css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
 
@@ -109,24 +109,24 @@
 				</li>				
 				<li><a href="../html/menuQueries.html">Consultas</a>					
 					<ul class="sub-menu">					
-						<li><a href="../php/pageQueryStudents.php">Alunos</a></li>						
-						<li><a href="../php/pageQueryLoans.php">Empréstimos</a></li>
-						<li><a href="../php/pageQueryBooks.php">Livros</a></li>											
-						<li><a href="../php/pageQueryUsers.php">Usuários</a></li>		
+						<li><a href="../php/tableQueryStudents.php">Alunos</a></li>						
+						<li><a href="../php/tableQueryLoans.php">Empréstimos</a></li>
+						<li><a href="../php/tableQueryBooks.php">Livros</a></li>											
+						<li><a href="../php/tableQueryUsers.php">Usuários</a></li>		
 					</ul>
 				</li>	
 				<li><a href="../html/menuReports.html">Relatórios</a>
 					<ul class="sub-menu">
-						<li><a href="../html/pageInDevelopment.html">Alunos</a></li>						
-						<li><a href="../html/pageInDevelopment.html">Empréstimos</a></li>
-						<li><a href="../html/pageInDevelopment.html">Livros</a></li>											
-						<li><a href="../html/pageInDevelopment.html">Usuários</a></li>		
+						<li><a target="_blank" href="../pdf/reportTotalStudents.php">Alunos</a></li>						
+						<li><a target="_blank" href="../pdf/reportTotalLoans.php">Empréstimos</a></li>
+						<li><a target="_blank" href="../pdf/reportTotalBooks.php">Livros</a></li>											
+						<li><a target="_blank" href="../pdf/reportTotalUsers.php">Usuários</a></li>		
 					</ul>
 				</li>				
 				<li>
 					<li><a href="../html/menuAbout.html">Sobre</a>
 						<ul class="sub-menu">
-							<li><a href="../html/aboutLibrary.html">Biblioteca</a></li>													
+							<li><a href="../html/pageInDevelopment.html">Biblioteca</a></li>													
 							<li><a href="../html/aboutDeveloper.html">Desenvolvedor</a></li>											
 						</ul>
 					</li>
