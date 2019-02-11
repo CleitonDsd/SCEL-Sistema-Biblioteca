@@ -269,3 +269,19 @@ tr button{
 tr:hover td {
 	background:#CCC;
 }
+/*<>Estilo botão de sair<>'*/
+#menuTopoSair{
+	position: relative;
+	margin: auto;
+	left: 100px;
+	top: 0px;
+	width: 80px;
+	height: 25px;
+	color: black;
+
+}
+#menuTopoSair:hover{
+	background-color: #8B1A1A;
+	color: #F0FFFF;
+
+}
