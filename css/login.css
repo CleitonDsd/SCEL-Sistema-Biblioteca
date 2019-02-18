@@ -1,158 +1,43 @@
-/* Páginas Padrão *//* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleiton_Dsd (twitter)*/
-*{	
-	margin-top: 0
+html,body {
+  font-family: 'Open Sans', serif;
+  font-size: 14px;
+  font-weight: 300;
 }
-.margem{
-	max-width: 1280px;
-	width:80%;
-	padding:5px;
-	margin: auto;  
+.hero.is-success {
+  /*background: #f2f7fa;*/
+  background-image:url(../images/bgi.jpg);
 }
-.data{ /*data central em Js*/
+.hero .nav, .hero.is-success .nav {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.box{
+	
+	height: 320px;
+}
+input {
+  font-weight: 300;
+}
+p {
+  font-weight: 700;
+}
+/* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleitonDsd (twitter)*/
+
+.data{ 
+	/*<>Data e hora ao centro do site em Js<>'*/
 	background-color: #8B1A1A;
 	margin:auto;	
 	height: 25px;
 	line-height: 25px;
-	width: 500px;
+	width: 100%;
+	max-width: 500px;
 	font-weight: 100;
-	margin-top: 2px;
+	top: -74px;
 	border-style: none solid solid solid;
-	border-color: white;
+	border-color: black;
 	border-radius: 0px 0px 15px 15px;
-	box-shadow: 1px 1px 1px #888888;	
-	color:antiquewhite;
+	box-shadow: 1px 1px 1px #888888;	/*define sombra da div*/
+	color: #F0FFFF;
 	font-family: helvetica;	
 	text-align: center;
-}
-/* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleiton_Dsd (twitter)*/
-.login{
-	/*<>Div de Login do site<>'*/
-	position: relative;
-	margin: auto;
-	top: 100px;
-	background-color: #F5F5DC;
-	width: 330px;
-	height: 330px; 
-	border-radius: 3px;
-	box-shadow: blue;
-	border-style: solid;
-	border-color: gray;
-}
-.form {
-	text-align: center;
-}
-.form input[type=text],
-input[type=password]{
-	height: 34px;
-	background-color: #E6E6FA;
-	border-radius: 6px 6px 6px 6px ;
-}
-
-.form input[type=button]{
-	width: 120px;
-	height: 30px;
-	color: white;
-	border-radius: 6px 6px 6px 6px ;
-	font-weight: bold;
-	background-color: #B22222;	
-} 	
-.form input[type=button]:hover{
-	font-weight: bold;
-	-moz-transform: scale(1.1);
-	-webkit-transform: scale(1.1);
-	transform: scale(1.1);
-}
-.esqueceu{
-	font-size: 14px;
-	text-decoration: none;
-}
-.esqueceu:hover{
-	font-size: 16px;
-	text-decoration: underline;
-}
-.preto{
-	background-color: #333;
-	color: #ccc
-}
-/* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleiton_Dsd (twitter)*/
-/*rodape*/
-
-.rodape{
-	/*rodapé do site, parte inferior do site, onde contém as redes sociais<>'*/
-	position: relative;
-	top: 240px;
-	border-radius: 7px;
-	border-color: #c6c6c6;
-	border-style: solid;
-	text-align: justify;
-	width: 100%;
-	max-width: 800px;
-	height: 183px;
-	margin: auto;
-	background-color: #333;
-	color: #ccc
-}
-.rodape p{
-	font-size: .9em;
-	font-weight: bold;
-	text-align: center;
-}
-
-.rodape span{
-	font-size: .8em;
-	text-align: center;
-}
-.social li{
-	display:inline; /*ocupa só a largura do conteudo do bloco*/
-	margin: 1px;
-}
-
-.social li a{
-	padding: 10px
-}
-.social img{
-	width: 30px;
-	border-radius: 10px;
-}
-.hr hr{
-	position: relative;
-	top: 200px;
-}
-/* Cleiton Dsd - www.github.com/CleitonDsd - dev.cleitondsd@gmail.com - @cleiton_Dsd (twitter)*/
-/*Reponsividade*/
-@media screen and (max-width:480px ){
-	.rodape{
-		width: 100%;
-		width:  330px;
-		height: 300px;
-	}
-	.social{
-		width: 89%;
-	}
-	.topo{
-		width: 100%;
-	}
-	.logoEtec{
-		float: none;
-		width: 20%;
-		height: 20%;
-	}
-	.tituloPrincipal{
-		font-size: 1em
-	}
-	.data{
-		width: 100%;
-	}
-}
-
-@media screen and (min-width: 481px) and (max-width: 2100px) {
-	.topo{
-		width: 100%;
-	}
-	.logo{
-		float: none;
-	}
-	.rodape{
-		width: 100%;
-	}
 }
