@@ -32,11 +32,13 @@ if(!empty($rmAluno)){
         // <>E atribuimos o resultado para linha_aluno(row_aluno)'<>
         $row_aluno = $resultado_aluno->fetch(PDO::FETCH_ASSOC);
         // <>Aqui imprimo o valor correspondente ao do Banco de Dados<>'
+        $array_valores['idAluno'] = $row_aluno['idAluno']; 
         $array_valores['nomeAluno'] = $row_aluno['nomeAluno'];         
     }else{
         // <>Se ele  não encontrou alguma linha acessa esse desvio de fluxo '<>
         // <>Quando não encontrar valores, na posição do array nomeAluno informar "Aluno não encontrado!"'<>
-        $array_valores['nomeAluno'] = 'Aluno não encontrado!';        
+        $array_valores['idAluno'] = 'ID Incorreto!';       
+        $array_valores['nomeAluno'] = 'Aluno não encontrado! Verifique o ID digitado';  
     }
     // <> Retorna o valor do $array_valores '<>
     echo json_encode($array_valores);
