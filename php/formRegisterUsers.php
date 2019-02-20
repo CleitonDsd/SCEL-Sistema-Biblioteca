@@ -303,7 +303,7 @@ if (isset ($_POST['nomeUsuario']) && !empty($_POST['nomeUsuario'])) {
 	$email 	  	= addslashes($_POST['emailUsuario']);
 	$login  	= addslashes($_POST['loginUsuario']);
 	$funcao  	= addslashes($_POST['funcaoUsuario']);    
-	$senha  	= addslashes(md5(($_POST['senhaUsuario'])));
+	$senha  	= addslashes(($_POST['senhaUsuario']));
 	$observacao = addslashes($_POST['observacaoUsuario']);
 	
 
