@@ -432,7 +432,7 @@ border-radius: 4px;
 
 /*---------- Botoes do form -----------*/
 .botoes input, button{	
-	top: 35px;
+	top: -5px;
 	left: 85px;
 	position: relative;
 	text-decoration: none;
