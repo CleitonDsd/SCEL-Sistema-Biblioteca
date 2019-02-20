@@ -257,7 +257,7 @@ border-radius: 4px;
 /*---- Form de Cadastro ----*/
 #formEmprestimos{
 	/*<>aumentando comprimento da div para form de emprestimos<>'*/
-	height: 740px;
+	height: 850px;
 }
 #formLivros{
 	/*<>aumentando comprimento da div para form de livros<>'*/
@@ -286,7 +286,7 @@ border-radius: 4px;
 }
 #fieldEmprestimos{
 	/*<>borda inferior empréstimos<>'*/
-	height: 685px;
+	height: 790px;
 }
 #fieldLivros{
 	/*<>borda inferior livros<>'*/
@@ -496,7 +496,7 @@ border-radius: 4px;
 }
 #botoesEmprestimos input, #botoesEmprestimos button {
 	/*<>botoes do form de emprestimos<>'*/
-	top: 15px;
+	top: -15px;
 }
 #botoesLivro input, #botoesLivro button{
 	top: 15px;
