@@ -32,11 +32,16 @@ if(!empty($nomeLivro)){
         // <>E atribuimos o resultado para linha_aluno(row_aluno)'<>
         $row_aluno = $resultado_livro->fetch(PDO::FETCH_ASSOC);
          // <>Aqui imprimo o valor correspondente ao do Banco de Dados<>'
-        $array_valores['editoraLivro'] = $row_aluno['editoraLivro'];         
+        $array_valores['idlivro'] = $row_aluno['idlivro']; 
+        $array_valores['edicaoLivro'] = $row_aluno['edicaoLivro'];         
+        $array_valores['editoraLivro'] = $row_aluno['editoraLivro']; 
     }else{
         // <>Se ele  não encontrou alguma linha acessa esse desvio de fluxo '<>
         // <>Quando não encontrar valores, na posição do array nomeEditora informar "Editora não encontrado!"'<>
-        $array_valores['editoraLivro'] = 'Editora não encontrada!';        
+        $array_valores['idlivro'] = 'ID Incorreto!';        
+        $array_valores['edicaoLivro'] = '???';    
+        $array_valores['editoraLivro'] = 'Editora não encontrada!'; 
+
     }
     // <> Retorna o valor do $array_valores '<>
     echo json_encode($array_valores);
