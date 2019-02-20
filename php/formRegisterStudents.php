@@ -249,7 +249,7 @@
 							<option>Cozinha</option>
 							<option>Nutrição</option>
 							<option>Enfermagem</option>
-							<option>Informática</option>
+							<option>Desenvolvimento</option>
 							<option>Segurança do Trabalho</option>							
 						</select>		
 
@@ -259,6 +259,32 @@
 						<p>Telefone:</p>
 						<input type="text"  name="telefoneAluno"  id="telefoneAluno"   size="15"  placeholder="ex.: (xx)x xxxx-xxxx">							
 					</div>
+
+					<div class="row">
+						<p>Conclus.:  </p>
+						<select name="conclusaoAluno">	
+							<option value="">selecione...</option>
+							<option>2019 </option>
+							<option>2020</option>
+							<option>2021</option>
+							<option>2022</option>
+							<option>2023</option>
+							<option>2024</option>							
+							<option>2025</option>							
+							<option>2026</option>							
+							<option>2027</option>							
+							<option>2028</option>							
+							<option>2029</option>							
+							<option>2030</option>							
+							<option>2031</option>														
+							<option>2032</option>														
+							<option>2033</option>														
+							<option>2034</option>														
+							<option>2035</option>																					
+						</select>	
+												
+					</div>
+
 					<div class="botoes">												
 						<input type="reset" name="voltar" value="Limpar">
 
@@ -328,6 +354,7 @@ if (isset ($_POST['nomeAluno']) && !empty($_POST['nomeAluno'])) {
 	$periodo  = addslashes($_POST['periodoAluno']);
 	$curso    = addslashes($_POST['cursoAluno']);
 	$telefone = addslashes($_POST['telefoneAluno']);
+	$conclusao= addslashes($_POST['conclusaoAluno']);
 
 	/*aqui eu monto a query*/
 	$sql ="INSERT INTO alunos SET
@@ -338,6 +365,7 @@ if (isset ($_POST['nomeAluno']) && !empty($_POST['nomeAluno'])) {
 	moduloAluno	    = '$modulo', 
 	periodoAluno    = '$periodo', 
 	cursoAluno 		= '$curso',
+	conclusaoAluno 	= '$conclusao',
 	telefoneAluno 	= '$telefone'"; 
 	
 
