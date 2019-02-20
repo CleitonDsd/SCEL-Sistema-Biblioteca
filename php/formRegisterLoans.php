@@ -216,16 +216,26 @@
 					</div>
 
 					<div class="row">
+						<p>ID Livro:</p>
+						<input type="text" id="idlivro" name="idlivro" size="10" placeholder="Id do Livro">
+					</div>
+					<div class="row">
+						<p>Edição:</p>
+						<input type="text" id="edicaoLivro" name="edicaoLivro" size="10" placeholder="Edição">	
+					</div>
+					<div class="row">
 						<p>Editora:</p>
 						<input type="text" id="editoraLivro" name="editoraLivro" size="35" placeholder="Editora">	
 					</div>
-
 					<div class="row">
 						<p>RM:</p>
 						<input type="text" id="rmAluno" name="rmAluno" size="10" placeholder="Rm do Aluno" 
 						>	
 					</div>
-
+					<div class="row">
+						<p>ID Aluno:</p>
+						<input type="text" id="idAluno" name="idAluno" size="10" placeholder="Id do Aluno">
+					</div>					
 					<div class="row">
 						<p>Aluno:</p>
 						<input type="text" id="nomeAluno" name="nomeAluno" size="35" placeholder="Nome do Aluno">	
