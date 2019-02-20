@@ -149,7 +149,7 @@
 							cancelButtonText: 'Cancelar'
 						}).then((result) => {
 							if (result.value) {
-								window.location = '../php/login.php';			
+								window.location = '../logout.php';	
 							}
 						})
 					};
@@ -319,7 +319,7 @@ if (isset ($_POST['rmAluno']) && !empty($_POST['rmAluno'])) {
 	
 
 // 	/*aqui eu monto a query*/
- 	$sql ="INSERT INTO emprestimos SET
+ 	$sql ="INSERT INTO emprestimo SET
 
 	dataEmprestimo		 = '$dataEmp', 
 	dataDevolucao   	 = '$dataDev', 

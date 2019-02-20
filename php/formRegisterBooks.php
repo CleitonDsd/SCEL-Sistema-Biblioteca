@@ -142,7 +142,7 @@
 							cancelButtonText: 'Cancelar'
 						}).then((result) => {
 							if (result.value) {
-								window.location = '../php/login.php';			
+								window.location = '../logout.php';	
 							}
 						})
 					};

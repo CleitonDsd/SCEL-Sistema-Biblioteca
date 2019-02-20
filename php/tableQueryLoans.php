@@ -95,7 +95,7 @@ $resultado_alunos = mysqli_query($conn, $result_alunos);
 							cancelButtonText: 'Cancelar'
 						}).then((result) => {
 							if (result.value) {
-								window.location = '../php/login.php';			
+								window.location = '../logout.php';	
 							}
 						})
 					};

@@ -1,3 +1,4 @@
+<?php session_start();  ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -146,7 +147,7 @@
 							cancelButtonText: 'Cancelar'
 						}).then((result) => {
 							if (result.value) {
-								window.location = '../php/login.php';			
+								window.location = '../logout.php';			
 							}
 						})
 					};

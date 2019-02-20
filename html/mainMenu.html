@@ -100,8 +100,8 @@
 					</li>
 				</li>				
 				<button id="menuTopoSair"> Sair </button> 									
-				<!-- Script do botão sair  -->
-				<script type="text/javascript">
+				<!-- Script do botão sair  -->	
+				<script type="text/javascript">					
 					document.getElementById('menuTopoSair').onclick = function(){
 						swal({
 							title: 'Você  tem certeza que deseja Sair?',
@@ -114,7 +114,7 @@
 							cancelButtonText: 'Cancelar'
 						}).then((result) => {
 							if (result.value) {
-								window.location = '../logout.php';			
+								window.location = '../logout.php';	
 							}
 						})
 					};
